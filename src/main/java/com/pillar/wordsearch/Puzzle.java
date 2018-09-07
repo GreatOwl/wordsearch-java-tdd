@@ -68,4 +68,8 @@ public class Puzzle {
         }
         return columns;
     }
+
+    public String getLeftDiag(int diag) {
+        return "bd";
+    }
 }

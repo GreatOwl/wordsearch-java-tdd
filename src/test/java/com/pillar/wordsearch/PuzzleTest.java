@@ -97,4 +97,10 @@ public class PuzzleTest {
         Puzzle puzzle = new Puzzle("a t m o", Arrays.asList("at", "am", "to"));
         assertEquals(Arrays.asList("am", "to"), puzzle.getColumns());
     }
+
+    @Test
+    public void whenFirstLeftDiagIsNeededReturnFirstLeftDiag() {
+        Puzzle puzzle = new Puzzle("a b c b c d c d e", Arrays.asList("at", "am", "to"));
+        assertEquals("bd", puzzle.getLeftDiag(0));
+    }
 }
