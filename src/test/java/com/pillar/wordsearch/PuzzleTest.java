@@ -85,4 +85,10 @@ public class PuzzleTest {
         Puzzle puzzle = new Puzzle("a t m o", Arrays.asList("at", "am", "to"));
         assertEquals("to", puzzle.getColumn(1));
     }
+
+    @Test
+    public void whenAllRowsNeededGetAllRows() {
+        Puzzle puzzle = new Puzzle("a t m o", Arrays.asList("at", "am", "to"));
+        assertEquals(Arrays.asList("at", "mo"), puzzle.getRows());
+    }
 }

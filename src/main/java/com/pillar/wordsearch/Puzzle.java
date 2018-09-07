@@ -1,5 +1,6 @@
 package com.pillar.wordsearch;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Puzzle {
@@ -44,6 +45,14 @@ public class Puzzle {
         return compressedPuzzle.substring(start, end);
     }
 
+    public List<String> getRows() {
+        List<String> rows = new ArrayList<String>();
+        for(int row = 0; row < getRowCount(); row = row + 1) {
+            rows.add(getRow(row));
+        }
+        return rows;
+    }
+
     public String getColumn(int column) {
         String columnContents = "";
         for (int row = 0; row < getRowCount(); row = row + 1) {
@@ -51,4 +60,5 @@ public class Puzzle {
         }
         return columnContents;
     }
+
 }
