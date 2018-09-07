@@ -58,7 +58,7 @@ public class PuzzleTest {
     @Test
     public void whenFirstRowIsNeededReturnsFirstRow() {
         Puzzle puzzle = new Puzzle(puzzleString, words);
-        assertEquals("QZVLEXWMRDAZYIJ", puzzle.getRow());
+        assertEquals("QZVLEXWMRDAZYIJ", puzzle.getRow(0));
     }
 
     @Test
