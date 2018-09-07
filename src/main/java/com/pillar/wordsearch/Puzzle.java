@@ -61,4 +61,11 @@ public class Puzzle {
         return columnContents;
     }
 
+    public List<String> getColumns() {
+        List<String> columns = new ArrayList<String>();
+        for(int column = 0; column < getRowCount(); column = column + 1) {
+            columns.add(getColumn(column));
+        }
+        return columns;
+    }
 }
