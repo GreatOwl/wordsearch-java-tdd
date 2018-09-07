@@ -6,9 +6,8 @@ import org.junit.Test;
 import org.junit.Before;
 import static junit.framework.TestCase.assertEquals;
 
-public class PuzzleTest {
+public class PuzzleTest {    
     
-    Puzzle puzzle;
     String puzzleString;
     List<String> words;
 
@@ -20,26 +19,26 @@ public class PuzzleTest {
 
     @Test
     public void whenPuzzleGivenInConstructionGetPuzzleReturnsSamePuzzle() {
-        puzzle = new Puzzle(puzzleString, words);
+        Puzzle puzzle = new Puzzle(puzzleString, words);
         assertEquals(puzzleString, puzzle.getPuzzle());
     }
 
     @Test
     public void whenWordsGivenInConstructionGetWordsReturnsSameWords() {
-        puzzle = new Puzzle(puzzleString, words);
+        Puzzle puzzle = new Puzzle(puzzleString, words);
         assertEquals(words, puzzle.getWords());
     }
 
     @Test
     public void whenNumberOfRowsAreRequestedReturns15() {
-        puzzle = new Puzzle(puzzleString, words);
+        Puzzle puzzle = new Puzzle(puzzleString, words);
         assertEquals(15, puzzle.getRowCount());
     }
 
     @Test
     public void whenPuzzleProvidedPuzzleGetsCompressedForSolving() {
         String compressedPuzzle = "QZVLEXWMRDAZYIJZTENHDTACDWRGSIEOHYPMJCWODNRKFHNTOORLRPGKXERUGENERATORMNSVGCWGUITAWOIAPLJQRECWTSTNCVYHDKVREGXBAGCDLAYGKMPKEUYTSEOOWJZPXZURNZALCTOMGGWIMXUZHCORRLIMHXCWGELXPODGJCHLVORHPRABSBTFTEGBOFNYEPBQLHUFPCOTODEPVDUBVGSACLDK";
-        puzzle = new Puzzle(puzzleString, words);
+        Puzzle puzzle = new Puzzle(puzzleString, words);
         assertEquals(compressedPuzzle, puzzle.compressPuzzle());
     }
 }
