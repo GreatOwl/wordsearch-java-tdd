@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="5" failures="0" name="PuzzleTest" time="0.005" errors="0" skipped="0">
+<testsuite tests="6" failures="0" name="PuzzleTest" time="0.004" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="java.vm.version" value="10.0.2+13"/>
@@ -69,5 +69,6 @@
   <testcase classname="PuzzleTest" name="whenPuzzleProvidedPuzzleGetsCompressedForSolvingForAnyPuzzle" time="0"/>
   <testcase classname="PuzzleTest" name="whenPuzzleGivenInConstructionGetPuzzleReturnsSamePuzzle" time="0"/>
   <testcase classname="PuzzleTest" name="whenWordsGivenInConstructionGetWordsReturnsSameWords" time="0"/>
-  <testcase classname="PuzzleTest" name="whenPuzzleProvidedPuzzleGetsCompressedForSolving" time="0.001"/>
+  <testcase classname="PuzzleTest" name="whenPuzzleProvidedPuzzleGetsCompressedForSolving" time="0"/>
+  <testcase classname="PuzzleTest" name="whenNumberOfRowsAreRequestedReturnsTheRowsForTheGivenTest" time="0"/>
 </testsuite>

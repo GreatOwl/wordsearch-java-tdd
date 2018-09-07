@@ -48,4 +48,10 @@ public class PuzzleTest {
         Puzzle puzzle = new Puzzle("a t m o", Arrays.asList("at", "am", "to"));
         assertEquals(compressedPuzzle, puzzle.compressPuzzle());
     }
+
+    @Test
+    public void whenNumberOfRowsAreRequestedReturnsTheRowsForTheGivenTest() {
+        Puzzle puzzle = new Puzzle("a t m o", Arrays.asList("at", "am", "to"));
+        assertEquals(2, puzzle.getRowCount());
+    }
 }

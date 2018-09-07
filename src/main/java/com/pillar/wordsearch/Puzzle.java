@@ -8,6 +8,8 @@ public class Puzzle {
     String compressedPuzzle;
     List<String> words;
 
+    Integer rows;
+
     public Puzzle(String puzzle, List<String> words) {
         this.puzzle = puzzle;
         this.words = words;
@@ -22,7 +24,11 @@ public class Puzzle {
     }
 
     public int getRowCount() {
-        return 15;
+        String puzzle = compressPuzzle();
+        double length = (double) puzzle.length();
+        float rowLength = (float) Math.sqrt(length);
+        rows = Integer.valueOf(Math.round(rowLength));
+        return rows.intValue();
     }
 
     public String compressPuzzle() {
