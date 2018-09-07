@@ -20,7 +20,7 @@ public class PuzzleTest {
     }
 
     @Test
-    public void whenWordIsAcrossReturnCoordinates() {
+    public void whenPuzzleGivenInConstructionGetPuzzleReturnsSamePuzzle() {
         assertEquals(puzzleString, puzzle.getPuzzle());
     }
 }
