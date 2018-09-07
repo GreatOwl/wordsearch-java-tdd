@@ -15,4 +15,8 @@ public class Puzzle {
     public String getPuzzle() {
         return puzzle;
     }
+
+    public List<String> getWords() {
+        return words;
+    }
 }

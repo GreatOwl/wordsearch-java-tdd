@@ -23,4 +23,9 @@ public class PuzzleTest {
     public void whenPuzzleGivenInConstructionGetPuzzleReturnsSamePuzzle() {
         assertEquals(puzzleString, puzzle.getPuzzle());
     }
+
+    @Test
+    public void whenWordsGivenInConstructionGetWordsReturnsSameWords() {
+        assertEquals(words, puzzle.getWords());
+    }
 }
