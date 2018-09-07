@@ -72,4 +72,11 @@ public class PuzzleTest {
         Puzzle puzzle = new Puzzle(puzzleString, words);
         assertEquals("EOHYPMJCWODNRKF", puzzle.getRow(2));
     }
+
+    @Test
+    public void whenFirstColumnIsNeededReturnsFirstColumn() {
+        String compressedPuzzle = "atmo";
+        Puzzle puzzle = new Puzzle("a t m o", Arrays.asList("at", "am", "to"));
+        assertEquals("am", puzzle.getColumn(0));
+    }
 }

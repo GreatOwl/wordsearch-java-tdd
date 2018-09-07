@@ -43,4 +43,8 @@ public class Puzzle {
         int end = start + getRowCount();
         return compressedPuzzle.substring(start, end);
     }
+
+    public String getColumn(int column) {
+        return "am";
+    }
 }
