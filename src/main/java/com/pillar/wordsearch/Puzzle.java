@@ -5,6 +5,7 @@ import java.util.List;
 public class Puzzle {
     
     String puzzle;
+    String compressedPuzzle;
     List<String> words;
 
     public Puzzle(String puzzle, List<String> words) {
@@ -25,6 +26,9 @@ public class Puzzle {
     }
 
     public String compressPuzzle() {
-        return "QZVLEXWMRDAZYIJZTENHDTACDWRGSIEOHYPMJCWODNRKFHNTOORLRPGKXERUGENERATORMNSVGCWGUITAWOIAPLJQRECWTSTNCVYHDKVREGXBAGCDLAYGKMPKEUYTSEOOWJZPXZURNZALCTOMGGWIMXUZHCORRLIMHXCWGELXPODGJCHLVORHPRABSBTFTEGBOFNYEPBQLHUFPCOTODEPVDUBVGSACLDK";
+        if (compressedPuzzle == null) {
+            compressedPuzzle = puzzle.replaceAll("\\s+", "");
+        }
+        return compressedPuzzle;
     }
 }

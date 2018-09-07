@@ -41,4 +41,11 @@ public class PuzzleTest {
         Puzzle puzzle = new Puzzle(puzzleString, words);
         assertEquals(compressedPuzzle, puzzle.compressPuzzle());
     }
+
+    @Test
+    public void whenPuzzleProvidedPuzzleGetsCompressedForSolvingForAnyPuzzle() {
+        String compressedPuzzle = "atmo";
+        Puzzle puzzle = new Puzzle("a t m o", Arrays.asList("at", "am", "to"));
+        assertEquals(compressedPuzzle, puzzle.compressPuzzle());
+    }
 }
