@@ -38,10 +38,6 @@ public class Puzzle {
         return compressedPuzzle;
     }
 
-    public String getRow() {
-        return "QZVLEXWMRDAZYIJ";
-    }
-
     public String getRow(int row) {
         int start = row * getRowCount();
         int end = start + getRowCount();
