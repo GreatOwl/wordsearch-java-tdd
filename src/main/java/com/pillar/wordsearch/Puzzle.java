@@ -41,4 +41,8 @@ public class Puzzle {
     public String getRow() {
         return "QZVLEXWMRDAZYIJ";
     }
+
+    public String getRow(int row) {
+        return "ZTENHDTACDWRGSI";
+    }
 }
