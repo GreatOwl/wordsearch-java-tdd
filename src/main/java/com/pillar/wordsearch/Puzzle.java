@@ -19,4 +19,8 @@ public class Puzzle {
     public List<String> getWords() {
         return words;
     }
+
+    public int getRowCount() {
+        return 15;
+    }
 }

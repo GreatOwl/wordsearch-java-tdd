@@ -28,4 +28,9 @@ public class PuzzleTest {
     public void whenWordsGivenInConstructionGetWordsReturnsSameWords() {
         assertEquals(words, puzzle.getWords());
     }
+
+    @Test
+    public void whenNumberOfRowsAreRequestedReturns15() {
+        assertEquals(15, puzzle.getRowCount());
+    }
 }
