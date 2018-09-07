@@ -66,4 +66,10 @@ public class PuzzleTest {
         Puzzle puzzle = new Puzzle(puzzleString, words);
         assertEquals("ZTENHDTACDWRGSI", puzzle.getRow(1));
     }
+
+    @Test
+    public void whenThirdRowIsNeededReturnsThirdRow() {
+        Puzzle puzzle = new Puzzle(puzzleString, words);
+        assertEquals("EOHYPMJCWODNRKF", puzzle.getRow(2));
+    }
 }

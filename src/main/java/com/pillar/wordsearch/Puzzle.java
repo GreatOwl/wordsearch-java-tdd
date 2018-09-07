@@ -43,6 +43,8 @@ public class Puzzle {
     }
 
     public String getRow(int row) {
-        return "ZTENHDTACDWRGSI";
+        int start = row * getRowCount();
+        int end = start + getRowCount();
+        return compressedPuzzle.substring(start, end);
     }
 }
