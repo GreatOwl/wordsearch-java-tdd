@@ -79,4 +79,10 @@ public class PuzzleTest {
         Puzzle puzzle = new Puzzle("a t m o", Arrays.asList("at", "am", "to"));
         assertEquals("am", puzzle.getColumn(0));
     }
+
+    @Test
+    public void whenSecondColumnIsNeededReturnsSecondColumn() {
+        Puzzle puzzle = new Puzzle("a t m o", Arrays.asList("at", "am", "to"));
+        assertEquals("to", puzzle.getColumn(1));
+    }
 }

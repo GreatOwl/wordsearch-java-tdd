@@ -45,6 +45,10 @@ public class Puzzle {
     }
 
     public String getColumn(int column) {
-        return "am";
+        String columnContents = "";
+        for (int row = 0; row < getRowCount(); row = row + 1) {
+            columnContents = columnContents + getRow(row).substring(column, column + 1);
+        }
+        return columnContents;
     }
 }
