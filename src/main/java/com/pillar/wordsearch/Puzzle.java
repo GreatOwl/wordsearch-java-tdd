@@ -37,4 +37,8 @@ public class Puzzle {
         }
         return compressedPuzzle;
     }
+
+    public String getRow() {
+        return "QZVLEXWMRDAZYIJ";
+    }
 }

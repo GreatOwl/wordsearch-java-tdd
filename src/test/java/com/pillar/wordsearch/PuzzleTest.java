@@ -50,8 +50,14 @@ public class PuzzleTest {
     }
 
     @Test
-    public void whenNumberOfRowsAreRequestedReturnsTheRowsForTheGivenTest() {
+    public void whenNumberOfRowsAreRequestedReturnsTheRowsForTheGivenPuzzle() {
         Puzzle puzzle = new Puzzle("a t m o", Arrays.asList("at", "am", "to"));
         assertEquals(2, puzzle.getRowCount());
+    }
+
+    @Test
+    public void whenFirstRowIsNeededReturnsFirstRow() {
+        Puzzle puzzle = new Puzzle(puzzleString, words);
+        assertEquals("QZVLEXWMRDAZYIJ", puzzle.getRow());
     }
 }
