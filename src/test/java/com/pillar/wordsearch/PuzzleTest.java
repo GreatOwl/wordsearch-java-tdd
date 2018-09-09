@@ -117,8 +117,14 @@ public class PuzzleTest {
     }
 
     @Test
-    public void whenFirstRightDiagIsNeededReturnFirstRigtDiag() {
+    public void whenFirstRightDiagIsNeededReturnFirstRightDiag() {
         Puzzle puzzle = new Puzzle("a b c b c d c d e", Arrays.asList("at", "am", "to"));
         assertEquals("bb", puzzle.getRightDiag(0));
+    }
+
+    @Test
+    public void whenSecondRightDiagIsNeededReturnSecondRightDiag() {
+        Puzzle puzzle = new Puzzle("a b c b c d c d e", Arrays.asList("at", "am", "to"));
+        assertEquals("ccc", puzzle.getRightDiag(1));
     }
 }

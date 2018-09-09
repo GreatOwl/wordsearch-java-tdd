@@ -91,7 +91,24 @@ public class Puzzle {
         return diagContents;
     }
 
-    public String getRightDiag(int diag) {
-        return "bb";
+    public String getRightDiag(int diag) { //m
+        int rowcount = getRowCount();// n
+        //Start:: correction to remove single character results
+        diag = diag + 1; 
+        if (diag >= 2 * rowcount - 2) {
+            return "";
+        }
+        //End:: correction to remove single character results
+        String diagContents = "";
+        
+        for(int row = 0; row < getRowCount(); row = row + 1) { // y
+            String rowContents = getRow(row);
+            int column = diag - row; // x
+
+            if (column + 1 <= rowContents.length() && column >= 0) {
+                diagContents = diagContents + rowContents.substring(column, column + 1);
+            }
+        }
+        return diagContents;
     }
 }
