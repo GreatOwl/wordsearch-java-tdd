@@ -115,4 +115,10 @@ public class PuzzleTest {
         Puzzle puzzle = new Puzzle("a b c b c d c d e", Arrays.asList("at", "am", "to"));
         assertEquals("", puzzle.getLeftDiag(3));
     }
+
+    @Test
+    public void whenFirstRightDiagIsNeededReturnFirstRigtDiag() {
+        Puzzle puzzle = new Puzzle("a b c b c d c d e", Arrays.asList("at", "am", "to"));
+        assertEquals("bb", puzzle.getRightDiag(0));
+    }
 }

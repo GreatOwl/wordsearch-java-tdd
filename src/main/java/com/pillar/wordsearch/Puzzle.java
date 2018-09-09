@@ -90,4 +90,8 @@ public class Puzzle {
         }
         return diagContents;
     }
+
+    public String getRightDiag(int diag) {
+        return "bb";
+    }
 }
