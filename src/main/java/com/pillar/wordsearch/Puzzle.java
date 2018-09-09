@@ -70,11 +70,16 @@ public class Puzzle {
     }
 
     public String getLeftDiag(int diag) { // m
-        //Left Diag formula 1 based index on paper:
-        // m = n - y + x - 1
-        diag = diag + 1; //correct to remove single character results
-        String diagContents = "";
+
         int rowcount = getRowCount();// n
+        //Start:: correction to remove single character results
+        diag = diag + 1; 
+        if (diag >= 2 * rowcount - 2) {
+            return "";
+        }
+        //End:: correction to remove single character results
+        String diagContents = "";
+        
         for(int row = 0; row < getRowCount(); row = row + 1) { // y
             String rowContents = getRow(row);
             int column = rowcount - diag + row - 1; // x

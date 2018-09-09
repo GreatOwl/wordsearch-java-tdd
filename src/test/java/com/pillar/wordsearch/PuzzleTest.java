@@ -109,4 +109,10 @@ public class PuzzleTest {
         Puzzle puzzle = new Puzzle("a b c b c d c d e", Arrays.asList("at", "am", "to"));
         assertEquals("ace", puzzle.getLeftDiag(1));
     }
+
+    @Test
+    public void whenDiagGreaterThanGridRequestedReturnEmptyString() {
+        Puzzle puzzle = new Puzzle("a b c b c d c d e", Arrays.asList("at", "am", "to"));
+        assertEquals("", puzzle.getLeftDiag(3));
+    }
 }
