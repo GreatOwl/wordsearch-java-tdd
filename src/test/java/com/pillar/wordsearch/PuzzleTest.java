@@ -103,4 +103,10 @@ public class PuzzleTest {
         Puzzle puzzle = new Puzzle("a b c b c d c d e", Arrays.asList("at", "am", "to"));
         assertEquals("bd", puzzle.getLeftDiag(0));
     }
+
+    @Test
+    public void whenSecondLeftDiagIsNeededReturnSecondtLeftDiag() {
+        Puzzle puzzle = new Puzzle("a b c b c d c d e", Arrays.asList("at", "am", "to"));
+        assertEquals("ace", puzzle.getLeftDiag(1));
+    }
 }

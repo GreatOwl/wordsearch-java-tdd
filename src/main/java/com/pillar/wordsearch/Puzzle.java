@@ -69,7 +69,20 @@ public class Puzzle {
         return columns;
     }
 
-    public String getLeftDiag(int diag) {
-        return "bd";
+    public String getLeftDiag(int diag) { // m
+        //Left Diag formula 1 based index on paper:
+        // m = n - y + x - 1
+        diag = diag + 1; //correct to remove single character results
+        String diagContents = "";
+        int rowcount = getRowCount();// n
+        for(int row = 0; row < getRowCount(); row = row + 1) { // y
+            String rowContents = getRow(row);
+            int column = rowcount - diag + row - 1; // x
+
+            if (column + 1 <= rowContents.length() && column >= 0) {
+                diagContents = diagContents + rowContents.substring(column, column + 1);
+            }
+        }
+        return diagContents;
     }
 }
