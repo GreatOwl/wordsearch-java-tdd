@@ -7,21 +7,15 @@ public class Puzzle {
     
     String puzzle;
     String compressedPuzzle;
-    List<String> words;
 
     Integer rows;
 
-    public Puzzle(String puzzle, List<String> words) {
+    public Puzzle(String puzzle) {
         this.puzzle = puzzle;
-        this.words = words;
     }
 
     public String getPuzzle() {
         return puzzle;
-    }
-
-    public List<String> getWords() {
-        return words;
     }
 
     public int getRowCount() {
