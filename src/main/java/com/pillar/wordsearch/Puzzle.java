@@ -28,10 +28,12 @@ public class Puzzle {
     }
 
     public int getRowCount() {
-        String puzzle = compressPuzzle();
-        double length = (double) puzzle.length();
-        float rowLength = (float) Math.sqrt(length);
-        rows = Integer.valueOf(Math.round(rowLength));
+        if (rows == null) {
+            String puzzle = compressPuzzle();
+            double length = (double) puzzle.length();
+            float rowLength = (float) Math.sqrt(length);
+            rows = Integer.valueOf(Math.round(rowLength));
+        }
         return rows.intValue();
     }
 
