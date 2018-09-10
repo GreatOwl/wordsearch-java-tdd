@@ -19,6 +19,11 @@ public class StringVector {
 
     public void append(String value, Coordinate start, Coordinate end) {
         this.value = this.value + value;
+        this.end = end;
+    }
+
+    public Coordinate getEndCoordinate() {
+        return end;
     }
 
     public String toString() {

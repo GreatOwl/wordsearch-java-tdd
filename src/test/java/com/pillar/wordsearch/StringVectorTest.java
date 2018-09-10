@@ -18,4 +18,15 @@ public class StringVectorTest {
         stringVector.append(testString, start, end);
         assertEquals(testString, stringVector.toString());
     }
+
+    @Test
+    public void whenStartCoordinateGivenItAddedToEnd() {
+        StringVector stringVector = new StringVector();
+        Coordinate start = new Coordinate(0, 0);
+        Coordinate end = new Coordinate(10, 0);
+        String testString = "testString";
+        stringVector.append(testString, start, end);
+        assertEquals(end.getY(), stringVector.getEndCoordinate().getY());
+        assertEquals(end.getX(), stringVector.getEndCoordinate().getX());
+    }
 }
