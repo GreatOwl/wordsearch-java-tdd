@@ -36,13 +36,13 @@ public class StringVector {
             for (int pos = 0; pos <= (end.getY() - start.getY()); pos = pos + 1) {
                 coordinates.add(new Coordinate(end.getX(), start.getY() + pos));
             }
-        } else if (Math.abs(end.getX()) == Math.abs(end.getY())) {
+        } else if (end.getX() == end.getY() || start.getX() == end.getY()) {
             // y = mx + b;
             //b = mx - y;
             int slope = (end.getX() - start.getX())/(end.getY() - start.getY());
             int offset = slope * start.getX() - start.getY();
             for (int pos = start.getX(); pos <= end.getX(); pos = pos + 1) {
-                int y = slope * pos + offset;
+                int y = slope * pos - offset;
                 coordinates.add(new Coordinate(pos, y));
             }
         }

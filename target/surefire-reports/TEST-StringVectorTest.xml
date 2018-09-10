@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="5" failures="0" name="StringVectorTest" time="0" errors="0" skipped="0">
+<testsuite tests="6" failures="0" name="StringVectorTest" time="0.001" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="java.vm.version" value="10.0.2+13"/>
@@ -65,9 +65,10 @@
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
+  <testcase classname="StringVectorTest" name="whenCoordinatesOfStringAreRequestedAllCoordinatesAreReturnedAsListForRightDiag" time="0"/>
   <testcase classname="StringVectorTest" name="whenCoordinatesOfStringAreRequestedAllCoordinatesAreReturnedAsListForXAxis" time="0"/>
   <testcase classname="StringVectorTest" name="whenCoordinatesOfStringAreRequestedAllCoordinatesAreReturnedAsListForYAxis" time="0"/>
   <testcase classname="StringVectorTest" name="whenCoordinatesOfStringAreRequestedAllCoordinatesAreReturnedAsListForLeftDiag" time="0"/>
   <testcase classname="StringVectorTest" name="whenStringAddedItCanBeRetrieved" time="0"/>
-  <testcase classname="StringVectorTest" name="whenStartCoordinateGivenItAddedToEnd" time="0"/>
+  <testcase classname="StringVectorTest" name="whenStartCoordinateGivenItAddedToEnd" time="0.001"/>
 </testsuite>
