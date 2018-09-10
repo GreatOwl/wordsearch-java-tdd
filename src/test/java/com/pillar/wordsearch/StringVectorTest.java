@@ -145,4 +145,32 @@ public class StringVectorTest {
             testPos = testPos + 1;
         }
     }
+
+    @Test
+    public void whenWhenSubstringRequestedReturnsStringVectorSubstringString() {
+        Coordinate start = new Coordinate(0, 9);
+        StringVector stringVector = new StringVector(start);
+        String testString = "testString";
+        Coordinate end = new Coordinate(9, 0);
+        stringVector.append(testString, end);
+        StringVector subString = stringVector.substring("String");
+        assertEquals("String", subString.toString());
+        List<Coordinate> realCoordinates = subString.getCoordinates();
+        List<Coordinate> coordinates = new ArrayList<Coordinate>();
+        coordinates.add(new Coordinate(4, 5));
+        coordinates.add(new Coordinate(5, 4));
+        coordinates.add(new Coordinate(6, 3));
+        coordinates.add(new Coordinate(7, 2));
+        coordinates.add(new Coordinate(8, 1));
+        coordinates.add(new Coordinate(9, 0));
+        assertEquals(6, coordinates.size());
+        int testPos = 0;
+        for (Coordinate testCoordinate : coordinates) {
+            Coordinate realCoordinate = realCoordinates.get(testPos);
+            assertEquals(testCoordinate.getX(), realCoordinate.getX());
+            assertEquals(testCoordinate.getY(), realCoordinate.getY());
+            testPos = testPos + 1;
+        }
+    }
+
 }
