@@ -26,6 +26,22 @@ public class StringVector {
         return end;
     }
 
+    public List<Coordinate> getCoordinates() {
+
+        List<Coordinate> coordinates = new ArrayList<Coordinate>();
+        coordinates.add(new Coordinate(0, 0));
+        coordinates.add(new Coordinate(1, 0));
+        coordinates.add(new Coordinate(2, 0));
+        coordinates.add(new Coordinate(3, 0));
+        coordinates.add(new Coordinate(4, 0));
+        coordinates.add(new Coordinate(5, 0));
+        coordinates.add(new Coordinate(6, 0));
+        coordinates.add(new Coordinate(7, 0));
+        coordinates.add(new Coordinate(8, 0));
+        coordinates.add(new Coordinate(9, 0));
+        return coordinates;
+    }
+
     public String toString() {
         return value;
     }
