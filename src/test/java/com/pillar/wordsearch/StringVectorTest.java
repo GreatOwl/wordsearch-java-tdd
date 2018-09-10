@@ -87,4 +87,33 @@ public class StringVectorTest {
             testPos = testPos + 1;
         }
     }
+
+    @Test
+    public void whenCoordinatesOfStringAreRequestedAllCoordinatesAreReturnedAsListForLeftDiag() {
+        Coordinate start = new Coordinate(0, 0);
+        StringVector stringVector = new StringVector(start);
+        String testString = "testString";
+        Coordinate end = new Coordinate(9, 9);
+        stringVector.append(testString, end);
+        List<Coordinate> coordinates = new ArrayList<Coordinate>();
+        coordinates.add(new Coordinate(0, 0));
+        coordinates.add(new Coordinate(1, 1));
+        coordinates.add(new Coordinate(2, 2));
+        coordinates.add(new Coordinate(3, 3));
+        coordinates.add(new Coordinate(4, 4));
+        coordinates.add(new Coordinate(5, 5));
+        coordinates.add(new Coordinate(6, 6));
+        coordinates.add(new Coordinate(7, 7));
+        coordinates.add(new Coordinate(8, 8));
+        coordinates.add(new Coordinate(9, 9));
+        List<Coordinate> realCoordinates = stringVector.getCoordinates();
+        assertEquals(10, coordinates.size());
+        int testPos = 0;
+        for (Coordinate testCoordinate : coordinates) {
+            Coordinate realCoordinate = realCoordinates.get(testPos);
+            assertEquals(testCoordinate.getX(), realCoordinate.getX());
+            assertEquals(testCoordinate.getY(), realCoordinate.getY());
+            testPos = testPos + 1;
+        }
+    }
 }
