@@ -31,11 +31,12 @@ public class StringVectorTest {
     }
 
     @Test
-    public void whenCoordinatesOfStringAreRequestedAllCoordinatesAreReturnedAsList() {
+    public void whenCoordinatesOfStringAreRequestedAllCoordinatesAreReturnedAsListForXAxis() {
         Coordinate start = new Coordinate(0, 0);
         StringVector stringVector = new StringVector(start);
         String testString = "testString";
         Coordinate end = new Coordinate(9, 0);
+        stringVector.append(testString, end);
         List<Coordinate> coordinates = new ArrayList<Coordinate>();
         coordinates.add(new Coordinate(0, 0));
         coordinates.add(new Coordinate(1, 0));
@@ -47,7 +48,37 @@ public class StringVectorTest {
         coordinates.add(new Coordinate(7, 0));
         coordinates.add(new Coordinate(8, 0));
         coordinates.add(new Coordinate(9, 0));
-        List <Coordinate> realCoordinates = stringVector.getCoordinates();
+        List<Coordinate> realCoordinates = stringVector.getCoordinates();
+        assertEquals(10, realCoordinates.size());
+        int testPos = 0;
+        for (Coordinate testCoordinate : coordinates) {
+            Coordinate realCoordinate = realCoordinates.get(testPos);
+            assertEquals(testCoordinate.getX(), realCoordinate.getX());
+            assertEquals(testCoordinate.getY(), realCoordinate.getY());
+            testPos = testPos + 1;
+        }
+    }
+
+    @Test
+    public void whenCoordinatesOfStringAreRequestedAllCoordinatesAreReturnedAsListForYAxis() {
+        Coordinate start = new Coordinate(0, 0);
+        StringVector stringVector = new StringVector(start);
+        String testString = "testString";
+        Coordinate end = new Coordinate(0, 9);
+        stringVector.append(testString, end);
+        List<Coordinate> coordinates = new ArrayList<Coordinate>();
+        coordinates.add(new Coordinate(0, 0));
+        coordinates.add(new Coordinate(0, 1));
+        coordinates.add(new Coordinate(0, 2));
+        coordinates.add(new Coordinate(0, 3));
+        coordinates.add(new Coordinate(0, 4));
+        coordinates.add(new Coordinate(0, 5));
+        coordinates.add(new Coordinate(0, 6));
+        coordinates.add(new Coordinate(0, 7));
+        coordinates.add(new Coordinate(0, 8));
+        coordinates.add(new Coordinate(0, 9));
+        List<Coordinate> realCoordinates = stringVector.getCoordinates();
+        assertEquals(10, coordinates.size());
         int testPos = 0;
         for (Coordinate testCoordinate : coordinates) {
             Coordinate realCoordinate = realCoordinates.get(testPos);

@@ -27,18 +27,16 @@ public class StringVector {
     }
 
     public List<Coordinate> getCoordinates() {
-
         List<Coordinate> coordinates = new ArrayList<Coordinate>();
-        coordinates.add(new Coordinate(0, 0));
-        coordinates.add(new Coordinate(1, 0));
-        coordinates.add(new Coordinate(2, 0));
-        coordinates.add(new Coordinate(3, 0));
-        coordinates.add(new Coordinate(4, 0));
-        coordinates.add(new Coordinate(5, 0));
-        coordinates.add(new Coordinate(6, 0));
-        coordinates.add(new Coordinate(7, 0));
-        coordinates.add(new Coordinate(8, 0));
-        coordinates.add(new Coordinate(9, 0));
+        if (end.getY() == start.getY()) {
+            for (int pos = 0; pos <= (end.getX() - start.getX()); pos = pos + 1) {
+                coordinates.add(new Coordinate(start.getX() + pos, end.getY()));
+            }
+        } else if (end.getX() == start.getX()) {
+            for (int pos = 0; pos <= (end.getY() - start.getY()); pos = pos + 1) {
+                coordinates.add(new Coordinate(end.getX(), start.getY() + pos));
+            }
+        }
         return coordinates;
     }
 
