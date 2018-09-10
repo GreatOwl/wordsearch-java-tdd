@@ -11,13 +11,13 @@ public class StringVector {
     public Coordinate start;
     public Coordinate end;
 
-    public StringVector() {
+    public StringVector(Coordinate start) {
         value = "";
-        start = new Coordinate(0, 0);
-        end = start;
+        this.start = start;
+        this.end = start;
     }
 
-    public void append(String value, Coordinate start, Coordinate end) {
+    public void append(String value, Coordinate end) {
         this.value = this.value + value;
         this.end = end;
     }
