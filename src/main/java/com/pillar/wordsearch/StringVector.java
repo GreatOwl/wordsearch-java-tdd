@@ -50,8 +50,11 @@ public class StringVector {
     }
 
     public StringVector substring(String search) {
-        StringVector subString = new StringVector(new Coordinate(4,5));
-        subString.append("String", new Coordinate(9,0));
+        List<Coordinate> currentCoordinates = getCoordinates();
+        int startPos = value.indexOf(search);
+        int endPos = startPos + search.length() - 1;
+        StringVector subString = new StringVector(currentCoordinates.get(startPos));
+        subString.append(search, currentCoordinates.get(endPos));
         return subString;
     }
 
