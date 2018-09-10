@@ -54,7 +54,7 @@ public class StringVector {
         return coordinates;
     }
 
-    public StringVector substring(String search) {
+    public StringVector findSubstring(String search) {
         List<Coordinate> currentCoordinates = getCoordinates();
         int startPos = value.indexOf(search);
         int endPos = startPos + search.length() - 1;

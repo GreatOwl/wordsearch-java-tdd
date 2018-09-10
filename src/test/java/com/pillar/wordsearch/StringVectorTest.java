@@ -153,7 +153,7 @@ public class StringVectorTest {
         String testString = "testString";
         Coordinate end = new Coordinate(9, 0);
         stringVector.append(testString, end);
-        StringVector subString = stringVector.substring("String");
+        StringVector subString = stringVector.findSubstring("String");
         assertEquals("String", subString.toString());
         List<Coordinate> realCoordinates = subString.getCoordinates();
         List<Coordinate> coordinates = new ArrayList<Coordinate>();
@@ -180,7 +180,7 @@ public class StringVectorTest {
         String testString = "testString";
         Coordinate end = new Coordinate(0, 9);
         stringVector.append(testString, end);
-        StringVector subString = stringVector.substring("test");
+        StringVector subString = stringVector.findSubstring("test");
         assertEquals("test", subString.toString());
         List<Coordinate> realCoordinates = subString.getCoordinates();
         List<Coordinate> coordinates = new ArrayList<Coordinate>();
