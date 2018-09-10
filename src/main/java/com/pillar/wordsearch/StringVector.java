@@ -84,4 +84,8 @@ public class StringVector {
     public String toString() {
         return value;
     }
+
+    public int length() {
+        return value.length();
+    }
 }

@@ -31,6 +31,16 @@ public class StringVectorTest {
     }
 
     @Test
+    public void whenYouNeedToKnowTheLengthOfTheCurrentStringItIsReturned() {
+        Coordinate start = new Coordinate(0, 0);
+        StringVector stringVector = new StringVector(start);
+        Coordinate end = new Coordinate(10, 0);
+        String testString = "testString";
+        stringVector.append(testString, end);
+        assertEquals(testString.length(), stringVector.length());
+    }
+
+    @Test
     public void whenVectorGivenAndEmptyStartStringWhenStringVectorAppendedUseNewVectorsStartPoint() {
         StringVector stringVector = new StringVector();
         String testString = "testString";
