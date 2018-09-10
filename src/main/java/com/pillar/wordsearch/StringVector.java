@@ -22,6 +22,11 @@ public class StringVector {
         this.end = end;
     }
 
+    public void append(StringVector vector) {
+        this.value = this.value + vector.toString();
+        this.end = vector.getEndCoordinate();
+    }
+
     public Coordinate getEndCoordinate() {
         return end;
     }

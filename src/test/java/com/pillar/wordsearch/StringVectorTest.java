@@ -197,4 +197,38 @@ public class StringVectorTest {
             testPos = testPos + 1;
         }
     }
+
+    public void whenWhenAppendingSubstringItCanBeDoneByJoiningAnotherStringVector() {
+
+        String testTestString = "test";
+        StringVector testVector = new StringVector(new Coordinate(0, 0));
+        testVector.append(testTestString, new Coordinate(0, 3));
+        
+        String stringTestString = "String";
+        StringVector stringVector = new StringVector(new Coordinate(0,4));
+        stringVector.append(stringTestString, new Coordinate(0, 9));
+        
+        testVector.append(stringVector);
+
+        List<Coordinate> coordinates = new ArrayList<Coordinate>();
+        coordinates.add(new Coordinate(0, 0));
+        coordinates.add(new Coordinate(0, 1));
+        coordinates.add(new Coordinate(0, 2));
+        coordinates.add(new Coordinate(0, 3));
+        coordinates.add(new Coordinate(0, 4));
+        coordinates.add(new Coordinate(0, 5));
+        coordinates.add(new Coordinate(0, 6));
+        coordinates.add(new Coordinate(0, 7));
+        coordinates.add(new Coordinate(0, 8));
+        coordinates.add(new Coordinate(0, 9));
+        List<Coordinate> realCoordinates = testVector.getCoordinates();
+        assertEquals(10, coordinates.size());
+        int testPos = 0;
+        for (Coordinate testCoordinate : coordinates) {
+            Coordinate realCoordinate = realCoordinates.get(testPos);
+            assertEquals(testCoordinate.getX(), realCoordinate.getX());
+            assertEquals(testCoordinate.getY(), realCoordinate.getY());
+            testPos = testPos + 1;
+        }
+    }
 }
