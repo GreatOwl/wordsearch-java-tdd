@@ -11,6 +11,10 @@ public class StringVector {
     public Coordinate start;
     public Coordinate end;
 
+    public StringVector() {
+        value = "";
+    }
+
     public StringVector(Coordinate start) {
         value = "";
         this.start = start;
@@ -23,12 +27,19 @@ public class StringVector {
     }
 
     public void append(StringVector vector) {
+        if (start == null) {
+            start = vector.getStartCoordinate();
+        }
         this.value = this.value + vector.toString();
         this.end = vector.getEndCoordinate();
     }
 
     public Coordinate getEndCoordinate() {
         return end;
+    }
+
+    public Coordinate getStartCoordinate() {
+        return start;
     }
 
     public List<Coordinate> getCoordinates() {

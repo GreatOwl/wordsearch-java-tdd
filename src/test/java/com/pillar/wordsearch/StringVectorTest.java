@@ -31,6 +31,19 @@ public class StringVectorTest {
     }
 
     @Test
+    public void whenVectorGivenAndEmptyStartStringWhenStringVectorAppendedUseNewVectorsStartPoint() {
+        StringVector stringVector = new StringVector();
+        String testString = "testString";
+        Coordinate start = new Coordinate(0, 0);
+        StringVector addVector = new StringVector(start);
+        Coordinate end = new Coordinate(10, 0);
+        addVector.append(testString, end);
+        stringVector.append(addVector);
+        assertEquals(start.getY(), stringVector.getStartCoordinate().getY());
+        assertEquals(start.getX(), stringVector.getStartCoordinate().getX());
+    }
+
+    @Test
     public void whenCoordinatesOfStringAreRequestedAllCoordinatesAreReturnedAsListForXAxis() {
         Coordinate start = new Coordinate(0, 0);
         StringVector stringVector = new StringVector(start);
