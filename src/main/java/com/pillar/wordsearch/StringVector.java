@@ -63,6 +63,13 @@ public class StringVector {
         return subString;
     }
 
+    public StringVector substring(int start, int end) {
+        List<Coordinate> currentCoordinates = getCoordinates();
+        StringVector substring = new StringVector(currentCoordinates.get(start));
+        substring.append(value.substring(start, end), currentCoordinates.get(end - 1));
+        return substring;
+    }
+
     public String toString() {
         return value;
     }

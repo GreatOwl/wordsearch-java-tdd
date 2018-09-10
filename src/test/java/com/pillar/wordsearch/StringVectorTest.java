@@ -231,4 +231,30 @@ public class StringVectorTest {
             testPos = testPos + 1;
         }
     }
+
+    @Test
+    public void whenSubstringRangeRequestedReturnAppropriateStringVector() {
+        Coordinate start = new Coordinate(0, 0);
+        StringVector stringVector = new StringVector(start);
+        String testString = "testString";
+        Coordinate end = new Coordinate(0, 9);
+        stringVector.append(testString, end);
+        StringVector substring = stringVector.substring(3, 8);
+        List<Coordinate> coordinates = new ArrayList<Coordinate>();
+        coordinates.add(new Coordinate(0, 3));
+        coordinates.add(new Coordinate(0, 4));
+        coordinates.add(new Coordinate(0, 5));
+        coordinates.add(new Coordinate(0, 6));
+        coordinates.add(new Coordinate(0, 7));
+        List<Coordinate> realCoordinates = substring.getCoordinates();
+        assertEquals(5, realCoordinates.size());
+        assertEquals("tStri", substring.toString());
+        int testPos = 0;
+        for (Coordinate testCoordinate : coordinates) {
+            Coordinate realCoordinate = realCoordinates.get(testPos);
+            assertEquals(testCoordinate.getX(), realCoordinate.getX());
+            assertEquals(testCoordinate.getY(), realCoordinate.getY());
+            testPos = testPos + 1;
+        }
+    }
 }
