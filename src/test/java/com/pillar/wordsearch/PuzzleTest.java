@@ -46,27 +46,27 @@ public class PuzzleTest {
 
     @Test
     public void whenFirstRowIsNeededReturnsFirstRow() {
-        assertEquals("abc", puzzle.getRow(0));
+        assertEquals("abc", puzzle.getRow(0).toString());
     }
 
     @Test
     public void whenSecondRowIsNeededReturnsSecondRow() {
-        assertEquals("bcd", puzzle.getRow(1));
+        assertEquals("bcd", puzzle.getRow(1).toString());
     }
 
     @Test
     public void whenThirdRowIsNeededReturnsThirdRow() {
-        assertEquals("cde", puzzle.getRow(2));
+        assertEquals("cde", puzzle.getRow(2).toString());
     }
 
     @Test
     public void whenFirstColumnIsNeededReturnsFirstColumn() {
-        assertEquals("abc", puzzle.getColumn(0));
+        assertEquals("abc", puzzle.getColumn(0).toString());
     }
 
     @Test
     public void whenSecondColumnIsNeededReturnsSecondColumn() {
-        assertEquals("bcd", puzzle.getColumn(1));
+        assertEquals("bcd", puzzle.getColumn(1).toString());
     }
 
     @Test
