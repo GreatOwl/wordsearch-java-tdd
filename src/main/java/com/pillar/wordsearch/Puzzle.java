@@ -9,9 +9,18 @@ public class Puzzle {
     String compressedPuzzle;
 
     Integer rows;
+    List<String> rowContents;
+    List<String> columnContents;
+    List<String> leftDiagContents;
+    List<String> rightDiagContents;
 
     public Puzzle(String puzzle) {
         this.puzzle = puzzle;
+        rowContents = new ArrayList<String>();
+        columnContents = new ArrayList<String>();
+        leftDiagContents = new ArrayList<String>();
+        rightDiagContents = new ArrayList<String>();
+        breakdownPuzzle();
     }
 
     public String getPuzzle() {
@@ -34,75 +43,101 @@ public class Puzzle {
     }
 
     public String getRow(int row) {
+        return getRows().get(row);
+    }
+
+    private void breakdownPuzzle() {
+        int rowCount = getRowCount();
+        for(int row = 0; row < rowCount; row = row + 1) {
+            loadRow(row);
+            String rowCharacters = getRow(row);
+            loadCharacters(row, rowCount, rowCharacters);
+        }
+    }
+
+    private void loadCharacters(int rowPosition, int rowCount, String row) {
+        for(int character = 0; character < row.length(); character = character + 1) {
+            String currentCharacter = row.substring(character, character + 1);
+            loadColumn(rowPosition, character, currentCharacter);
+            loadLeftDiag(rowPosition, character, rowCount, currentCharacter);
+            loadRightDiag(rowPosition, character, rowCount, currentCharacter);
+        }
+    }
+
+    private void loadRow(int row) {
         int start = row * getRowCount();
         int end = start + getRowCount();
-        return compressedPuzzle.substring(start, end);
+        String rowCharacters = compressedPuzzle.substring(start, end);
+        rowContents.add(row, rowCharacters);
+    }
+
+    private void loadColumn(int row, int column, String character) {
+        safeUpdateList(column, columnContents, character);
+    }
+
+    private void loadRightDiag(int row, int column, int rowCount, String character) {
+        int diag = row + column - 1;
+        if (isSingleCharDiag(diag)) {
+            return;
+        }
+        safeUpdateList(diag, rightDiagContents, character);
+    }
+
+    private void safeUpdateList(int index, List<String> container, String value) {
+        String current = value;
+        if (index >= 0) {
+            try {
+                current = container.get(index) + current;
+            } catch ( IndexOutOfBoundsException e ) {
+                if (container.size() < index) {
+                    for (int missingEntry = 0; missingEntry < index; missingEntry = missingEntry + 1) {
+                        container.add( missingEntry, "" );
+                    }
+                }
+                container.add( index, current );
+            }
+            container.set(index, current);
+        }
+    }
+
+    private void loadLeftDiag(int row, int column, int rowCount, String character) {
+        // int diag = rowCount - row + column + 1;
+        int diag = row - column + 1;
+        if (isSingleCharDiag(diag)) {
+            return;
+        }
+        safeUpdateList(diag, leftDiagContents, character);
     }
 
     public List<String> getRows() {
-        List<String> rows = new ArrayList<String>();
-        for(int row = 0; row < getRowCount(); row = row + 1) {
-            rows.add(getRow(row));
-        }
-        return rows;
+        return rowContents;
     }
 
     public String getColumn(int column) {
-        String columnContents = "";
-        for (int row = 0; row < getRowCount(); row = row + 1) {
-            columnContents = columnContents + getRow(row).substring(column, column + 1);
-        }
-        return columnContents;
+        return getColumns().get(column);
     }
 
     public List<String> getColumns() {
-        List<String> columns = new ArrayList<String>();
-        for(int column = 0; column < getRowCount(); column = column + 1) {
-            columns.add(getColumn(column));
-        }
-        return columns;
+        return columnContents;
     }
 
     public String getLeftDiag(int diag) { // m
-
-        int rowcount = getRowCount();// n
-        //Start:: correction to remove single character results
-        diag = diag + 1; 
-        if (diag >= 2 * rowcount - 2) {
+        if (isSingleCharDiag(diag)) {
             return "";
         }
-        //End:: correction to remove single character results
-        String diagContents = "";
-        
-        for(int row = 0; row < getRowCount(); row = row + 1) { // y
-            String rowContents = getRow(row);
-            int column = rowcount - diag + row - 1; // x
 
-            if (column + 1 <= rowContents.length() && column >= 0) {
-                diagContents = diagContents + rowContents.substring(column, column + 1);
-            }
-        }
-        return diagContents;
+        return leftDiagContents.get(diag);
+    }
+
+    private boolean isSingleCharDiag(int diag) {
+        return (diag + 1) >= (2 * getRowCount() - 2);
     }
 
     public String getRightDiag(int diag) { //m
-        int rowcount = getRowCount();// n
-        //Start:: correction to remove single character results
-        diag = diag + 1; 
-        if (diag >= 2 * rowcount - 2) {
+        if (isSingleCharDiag(diag)) {
             return "";
         }
-        //End:: correction to remove single character results
-        String diagContents = "";
-        
-        for(int row = 0; row < getRowCount(); row = row + 1) { // y
-            String rowContents = getRow(row);
-            int column = diag - row; // x
 
-            if (column + 1 <= rowContents.length() && column >= 0) {
-                diagContents = diagContents + rowContents.substring(column, column + 1);
-            }
-        }
-        return diagContents;
+        return rightDiagContents.get(diag);
     }
 }
