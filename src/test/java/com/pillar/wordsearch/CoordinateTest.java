@@ -15,4 +15,12 @@ public class CoordinateTest {
         Coordinate coord = new Coordinate(x, y);
         assertEquals(x, coord.getX());
     }
+
+    @Test
+    public void whenCoordinatesConstructedYCanBeRetreived() {
+        int x = 12;
+        int y = 22;
+        Coordinate coord = new Coordinate(x, y);
+        assertEquals(y, coord.getY());
+    }
 }
