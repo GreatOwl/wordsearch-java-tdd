@@ -90,7 +90,6 @@ public class StringVector {
             currentCoordinates.get(start), 
             currentCoordinates.get(end - 1)
         );
-        // substring.append(value.substring(start, end), currentCoordinates.get(end - 1));
         return substring;
     }
 
