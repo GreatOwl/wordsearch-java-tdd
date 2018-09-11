@@ -121,7 +121,6 @@ public class SearchTest {
         words = new ArrayList<Word>();
         words.add(new Word("bgl"));
         Search actualSearch = new Search(testPuzzle, words);
-        StringVector value = testPuzzle.getLeftDiag(0);
         assureWordsMatch(words, actualSearch.solvePuzzle());
     }
 }
