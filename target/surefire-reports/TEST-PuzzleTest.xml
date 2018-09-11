@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="19" failures="0" name="PuzzleTest" time="0.013" errors="0" skipped="0">
+<testsuite tests="19" failures="0" name="PuzzleTest" time="0.011" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="java.vm.version" value="10.0.2+13"/>
@@ -65,23 +65,23 @@
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="PuzzleTest" name="whenSecondColumnIsNeededReturnsSecondColumn" time="0.001"/>
+  <testcase classname="PuzzleTest" name="whenSecondColumnIsNeededReturnsSecondColumn" time="0"/>
   <testcase classname="PuzzleTest" name="whenPuzzleProvidedPuzzleGetsCompressedForSolvingForAnyPuzzle" time="0"/>
   <testcase classname="PuzzleTest" name="whenFirstColumnIsNeededReturnsFirstColumn" time="0"/>
   <testcase classname="PuzzleTest" name="whenAllRightDiagsNeededGetAllRightDiags" time="0.001"/>
-  <testcase classname="PuzzleTest" name="whenDiagGreaterThanGridRequestedReturnEmptyString" time="0.001"/>
+  <testcase classname="PuzzleTest" name="whenDiagGreaterThanGridRequestedReturnEmptyString" time="0"/>
   <testcase classname="PuzzleTest" name="whenNumberOfRowsAreRequestedReturnsTheRowsForTheGivenPuzzle" time="0.001"/>
   <testcase classname="PuzzleTest" name="whenFirstRightDiagIsNeededReturnFirstRightDiag" time="0.001"/>
-  <testcase classname="PuzzleTest" name="whenSecondRightDiagIsNeededReturnSecondRightDiag" time="0.002"/>
+  <testcase classname="PuzzleTest" name="whenSecondRightDiagIsNeededReturnSecondRightDiag" time="0.001"/>
   <testcase classname="PuzzleTest" name="whenPuzzleGivenInConstructionGetPuzzleReturnsSamePuzzle" time="0.001"/>
-  <testcase classname="PuzzleTest" name="whenAllRowsNeededGetAllRows" time="0.001"/>
-  <testcase classname="PuzzleTest" name="whenAllColumnsNeededGetAllColumns" time="0.001"/>
-  <testcase classname="PuzzleTest" name="whenThirdRowIsNeededReturnsThirdRow" time="0"/>
-  <testcase classname="PuzzleTest" name="whenSecondRowIsNeededReturnsSecondRow" time="0"/>
-  <testcase classname="PuzzleTest" name="whenNumberOfRowsAreRequestedReturns3" time="0.001"/>
+  <testcase classname="PuzzleTest" name="whenAllRowsNeededGetAllRows" time="0"/>
+  <testcase classname="PuzzleTest" name="whenAllColumnsNeededGetAllColumns" time="0"/>
+  <testcase classname="PuzzleTest" name="whenThirdRowIsNeededReturnsThirdRow" time="0.001"/>
+  <testcase classname="PuzzleTest" name="whenSecondRowIsNeededReturnsSecondRow" time="0.001"/>
+  <testcase classname="PuzzleTest" name="whenNumberOfRowsAreRequestedReturns3" time="0"/>
   <testcase classname="PuzzleTest" name="whenSecondLeftDiagIsNeededReturnSecondtLeftDiag" time="0.001"/>
-  <testcase classname="PuzzleTest" name="whenAllLeftDiagsNeededGetAllLeftDiags" time="0"/>
-  <testcase classname="PuzzleTest" name="whenPuzzleProvidedPuzzleGetsCompressedForSolving" time="0"/>
-  <testcase classname="PuzzleTest" name="whenFirstRowIsNeededReturnsFirstRow" time="0.001"/>
-  <testcase classname="PuzzleTest" name="whenFirstLeftDiagIsNeededReturnFirstLeftDiag" time="0"/>
+  <testcase classname="PuzzleTest" name="whenAllLeftDiagsNeededGetAllLeftDiags" time="0.001"/>
+  <testcase classname="PuzzleTest" name="whenPuzzleProvidedPuzzleGetsCompressedForSolving" time="0.001"/>
+  <testcase classname="PuzzleTest" name="whenFirstRowIsNeededReturnsFirstRow" time="0"/>
+  <testcase classname="PuzzleTest" name="whenFirstLeftDiagIsNeededReturnFirstLeftDiag" time="0.001"/>
 </testsuite>
