@@ -22,5 +22,9 @@ public class Main {
         };
         return data;
     }
+
+    public String[] splitIntoLines(String data) {
+        return data.split("\\s+");
+    }
 }
     
