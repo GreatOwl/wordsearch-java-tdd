@@ -5,6 +5,8 @@ import java.util.List;
 import org.junit.Test;
 import org.junit.Before;
 import static junit.framework.TestCase.assertEquals;
+import com.pillar.wordsearch.StringVector;
+import com.pillar.wordsearch.Coordinate;
 
 public class PuzzleTest {    
     
@@ -69,38 +71,55 @@ public class PuzzleTest {
         assertEquals("bcd", puzzle.getColumn(1).toString());
     }
 
+    private void assureStringVectorList(List<StringVector> test, List<StringVector> real) {
+        int pos = 0;
+        for (StringVector testVector : test) {
+            StringVector realVector  = real.get(pos);
+            assertEquals(testVector.toString(), realVector.toString());
+            pos = pos + 1;
+        }
+    }
+
     @Test
     public void whenAllRowsNeededGetAllRows() {
-        assertEquals(Arrays.asList("abc", "bcd", "cde"), puzzle.getRows());
+        List<StringVector> testList = new ArrayList<StringVector>();
+        testList.add(new StringVector("abc", new Coordinate(0,0), new Coordinate(2, 0)));
+        testList.add(new StringVector("bcd", new Coordinate(0,1), new Coordinate(2, 1)));
+        testList.add(new StringVector("cde", new Coordinate(0,2), new Coordinate(2, 2)));
+        assureStringVectorList(testList, puzzle.getRows());
     }
 
     @Test
     public void whenAllColumnsNeededGetAllColumns() {
-        assertEquals(Arrays.asList("abc", "bcd", "cde"), puzzle.getColumns());
+        List<StringVector> testList = new ArrayList<StringVector>();
+        testList.add(new StringVector("abc", new Coordinate(0,0), new Coordinate(0, 2)));
+        testList.add(new StringVector("bcd", new Coordinate(1,0), new Coordinate(1, 2)));
+        testList.add(new StringVector("cde", new Coordinate(2,0), new Coordinate(2, 2)));
+        assureStringVectorList(testList, puzzle.getColumns());
     }
 
     @Test
     public void whenFirstLeftDiagIsNeededReturnFirstLeftDiag() {
-        assertEquals("bd", puzzle.getLeftDiag(0));
+        assertEquals("bd", puzzle.getLeftDiag(0).toString());
     }
 
     @Test
     public void whenSecondLeftDiagIsNeededReturnSecondtLeftDiag() {
-        assertEquals("ace", puzzle.getLeftDiag(1));
+        assertEquals("ace", puzzle.getLeftDiag(1).toString());
     }
 
     @Test
     public void whenDiagGreaterThanGridRequestedReturnEmptyString() {
-        assertEquals("", puzzle.getLeftDiag(3));
+        assertEquals("", puzzle.getLeftDiag(3).toString());
     }
 
     @Test
     public void whenFirstRightDiagIsNeededReturnFirstRightDiag() {
-        assertEquals("bb", puzzle.getRightDiag(0));
+        assertEquals("bb", puzzle.getRightDiag(0).toString());
     }
 
     @Test
     public void whenSecondRightDiagIsNeededReturnSecondRightDiag() {
-        assertEquals("ccc", puzzle.getRightDiag(1));
+        assertEquals("ccc", puzzle.getRightDiag(1).toString());
     }
 }

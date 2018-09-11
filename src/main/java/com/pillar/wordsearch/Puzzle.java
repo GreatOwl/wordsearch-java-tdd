@@ -2,6 +2,8 @@ package com.pillar.wordsearch;
 
 import java.util.ArrayList;
 import java.util.List;
+import com.pillar.wordsearch.StringVector;
+import com.pillar.wordsearch.Coordinate;
 
 public class Puzzle {
     
@@ -9,17 +11,17 @@ public class Puzzle {
     String compressedPuzzle;
 
     Integer rows;
-    List<String> rowContents;
-    List<String> columnContents;
-    List<String> leftDiagContents;
-    List<String> rightDiagContents;
+    List<StringVector> rowContents;
+    List<StringVector> columnContents;
+    List<StringVector> leftDiagContents;
+    List<StringVector> rightDiagContents;
 
     public Puzzle(String puzzle) {
         this.puzzle = puzzle;
-        rowContents = new ArrayList<String>();
-        columnContents = new ArrayList<String>();
-        leftDiagContents = new ArrayList<String>();
-        rightDiagContents = new ArrayList<String>();
+        rowContents = new ArrayList<StringVector>();
+        columnContents = new ArrayList<StringVector>();
+        leftDiagContents = new ArrayList<StringVector>();
+        rightDiagContents = new ArrayList<StringVector>();
         breakdownPuzzle();
     }
 
@@ -44,56 +46,34 @@ public class Puzzle {
         return compressedPuzzle;
     }
 
-    public String getRow(int row) {
-        return getRows().get(row);
-    }
-
     private void breakdownPuzzle() {
         int rowCount = getRowCount();
         for(int row = 0; row < rowCount; row = row + 1) {
             loadRow(row);
-            String rowCharacters = getRow(row);
+            StringVector rowCharacters = getRow(row);
             loadCharacters(row, rowCount, rowCharacters);
         }
     }
 
-    private void loadCharacters(int rowPosition, int rowCount, String row) {
+    private void loadCharacters(int rowPosition, int rowCount, StringVector row) {
         for(int character = 0; character < row.length(); character = character + 1) {
-            String currentCharacter = row.substring(character, character + 1);
-            loadColumn(rowPosition, character, currentCharacter);
-            loadLeftDiag(rowPosition, character, rowCount, currentCharacter);
-            loadRightDiag(rowPosition, character, rowCount, currentCharacter);
+            StringVector currentCharacter = row.substring(character, character + 1);
+            loadColumn(rowPosition, character, currentCharacter.clone());
+            loadLeftDiag(rowPosition, character, rowCount, currentCharacter.clone());
+            loadRightDiag(rowPosition, character, rowCount, currentCharacter.clone());
         }
     }
 
-    private void loadRow(int row) {
-        int start = row * getRowCount();
-        int end = start + getRowCount();
-        String rowCharacters = compressedPuzzle.substring(start, end);
-        rowContents.add(row, rowCharacters);
-    }
-
-    private void loadColumn(int row, int column, String character) {
-        safeUpdateList(column, columnContents, character);
-    }
-
-    private void loadRightDiag(int row, int column, int rowCount, String character) {
-        int diag = row + column - 1;
-        if (isSingleCharDiag(diag)) {
-            return;
-        }
-        safeUpdateList(diag, rightDiagContents, character);
-    }
-
-    private void safeUpdateList(int index, List<String> container, String value) {
-        String current = value;
+    private void safeUpdateList(int index, List<StringVector> container, StringVector value) {
+        StringVector current = value;
         if (index >= 0) {
             try {
-                current = container.get(index) + current;
+                current = container.get(index);
+                current.append(value);
             } catch ( IndexOutOfBoundsException e ) {
                 if (container.size() < index) {
                     for (int missingEntry = 0; missingEntry < index; missingEntry = missingEntry + 1) {
-                        container.add( missingEntry, "" );
+                        container.add( missingEntry, new StringVector());
                     }
                 }
                 container.add( index, current );
@@ -102,7 +82,27 @@ public class Puzzle {
         }
     }
 
-    private void loadLeftDiag(int row, int column, int rowCount, String character) {
+    private void loadRow(int row) {
+        int rowCount = getRowCount();
+        int start = row * rowCount;
+        int end = start + rowCount;
+        String rowCharacters = compressedPuzzle.substring(start, end);
+        rowContents.add(row, new StringVector(rowCharacters, new Coordinate(0,row), new Coordinate(rowCount - 1, row)));
+    }
+
+    private void loadColumn(int row, int column, StringVector character) {
+        safeUpdateList(column, columnContents, character);
+    }
+
+    private void loadRightDiag(int row, int column, int rowCount, StringVector character) {
+        int diag = row + column - 1;
+        if (isSingleCharDiag(diag)) {
+            return;
+        }
+        safeUpdateList(diag, rightDiagContents, character);
+    }
+
+    private void loadLeftDiag(int row, int column, int rowCount, StringVector character) {
         // int diag = rowCount - row + column + 1;
         int diag = row - column + 1;
         if (isSingleCharDiag(diag)) {
@@ -111,21 +111,25 @@ public class Puzzle {
         safeUpdateList(diag, leftDiagContents, character);
     }
 
-    public List<String> getRows() {
+    public List<StringVector> getRows() {
         return rowContents;
     }
 
-    public String getColumn(int column) {
+    public StringVector getRow(int row) {
+        return getRows().get(row);
+    }
+
+    public StringVector getColumn(int column) {
         return getColumns().get(column);
     }
 
-    public List<String> getColumns() {
+    public List<StringVector> getColumns() {
         return columnContents;
     }
 
-    public String getLeftDiag(int diag) { // m
+    public StringVector getLeftDiag(int diag) { // m
         if (isSingleCharDiag(diag)) {
-            return "";
+            return new StringVector();
         }
 
         return leftDiagContents.get(diag);
@@ -135,9 +139,9 @@ public class Puzzle {
         return (diag + 1) >= (2 * getRowCount() - 2);
     }
 
-    public String getRightDiag(int diag) { //m
+    public StringVector getRightDiag(int diag) { //m
         if (isSingleCharDiag(diag)) {
-            return "";
+            return new StringVector();
         }
 
         return rightDiagContents.get(diag);

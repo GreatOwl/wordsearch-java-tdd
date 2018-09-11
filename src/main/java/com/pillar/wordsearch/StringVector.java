@@ -21,8 +21,9 @@ public class StringVector {
         this.end = start;
     }
 
-    public void append(String value, Coordinate end) {
-        this.value = this.value + value;
+    public StringVector(String value, Coordinate start, Coordinate end) {
+        this.value = value;
+        this.start = start;
         this.end = end;
     }
 
@@ -32,6 +33,14 @@ public class StringVector {
         }
         this.value = this.value + vector.toString();
         this.end = vector.getEndCoordinate();
+    }
+
+    public void append(String value, Coordinate point) {
+        if (start == null) {
+            this.start = point;
+        }
+        this.value = this.value + value;
+        this.end = point;
     }
 
     public Coordinate getEndCoordinate() {
@@ -76,8 +85,12 @@ public class StringVector {
 
     public StringVector substring(int start, int end) {
         List<Coordinate> currentCoordinates = getCoordinates();
-        StringVector substring = new StringVector(currentCoordinates.get(start));
-        substring.append(value.substring(start, end), currentCoordinates.get(end - 1));
+        StringVector substring = new StringVector(
+            value.substring(start, end), 
+            currentCoordinates.get(start), 
+            currentCoordinates.get(end - 1)
+        );
+        // substring.append(value.substring(start, end), currentCoordinates.get(end - 1));
         return substring;
     }
 
