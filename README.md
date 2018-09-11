@@ -1,5 +1,10 @@
 # wordsearch-java-tdd
-Wordsearch Kata Pillar
+This is my solution to the wordsearch problem issued by Pillar. Some interesting facts that I hope you will consider in the assessment of this application.
+
+- This is my second time working on a java application.
+- Before this project I had never used junit.
+- I believe there are more opportunities to tune this for performance.
+- Whether or not this will adequately pass the codescreen, I would love feedback so that I can grow as a developer.
 
 ## Dependencies
 Linux/Unix Operating system with bash.
