@@ -88,4 +88,10 @@ public class StringVector {
     public int length() {
         return value.length();
     }
+
+    public StringVector clone() {
+        StringVector cloneVector = new StringVector(getStartCoordinate());
+        cloneVector.append(value, getEndCoordinate());
+        return cloneVector;
+    }
 }

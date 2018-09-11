@@ -31,6 +31,18 @@ public class StringVectorTest {
     }
 
     @Test
+    public void whenCloneIsNeededCloneIsReturned() {
+        Coordinate start = new Coordinate(0, 0);
+        StringVector stringVector = new StringVector(start);
+        Coordinate end = new Coordinate(10, 0);
+        String testString = "testString";
+        stringVector.append(testString, end);
+
+        StringVector clonedVector = stringVector.clone();
+        assertEquals(stringVector.toString(), clonedVector.toString());
+    }
+
+    @Test
     public void whenYouNeedToKnowTheLengthOfTheCurrentStringItIsReturned() {
         Coordinate start = new Coordinate(0, 0);
         StringVector stringVector = new StringVector(start);
