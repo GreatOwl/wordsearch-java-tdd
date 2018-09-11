@@ -10,6 +10,8 @@ import java.util.List;
 
 import org.junit.Before;
 import org.junit.Test;
+import com.pillar.wordsearch.Word;
+import com.pillar.wordsearch.Main;
 
 public class MainTest {
 
@@ -55,5 +57,25 @@ public class MainTest {
         };
 
         assertEquals(testList, main.splitIntoLines(testContents));
+    }
+
+    @Test
+    public void whenGivenWordListStringCanConvertToListOfWords() {
+        String testString = "BONES,KHAN,KIRK,SCOTTY,SPOCK,SULU,UHURA";
+        List<Word> testList = new ArrayList<Word>();
+        testList.add(new Word("BONES"));
+        testList.add(new Word("KHAN"));
+        testList.add(new Word("KIRK"));
+        testList.add(new Word("SCOTTY"));
+        testList.add(new Word("SPOCK"));
+        testList.add(new Word("SULU"));
+        testList.add(new Word("UHURA"));
+
+        List<Word> actual = main.splitIntoWords(testString);
+        int pos = 0;
+        for (Word testWord : testList) {
+            assertEquals(testWord.toString(), actual.get(pos).toString());
+            pos = pos + 1;
+        }
     }
 }

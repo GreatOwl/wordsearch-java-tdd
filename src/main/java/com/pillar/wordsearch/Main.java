@@ -7,6 +7,8 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 
+import com.pillar.wordsearch.Word;
+
 public class Main {
     public static void main(String[] args) {
 
@@ -25,6 +27,16 @@ public class Main {
 
     public String[] splitIntoLines(String data) {
         return data.split("\\s+");
+    }
+
+    public List<Word> splitIntoWords(String parsableWords) {
+        String[] wordSplit = parsableWords.split("\\,");
+        List<Word> words = new ArrayList<Word>();
+        for (String wordString : wordSplit) {
+            Word word = new Word(wordString);
+            words.add(word);
+        }
+        return words;
     }
 }
     
