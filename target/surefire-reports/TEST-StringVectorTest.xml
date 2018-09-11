@@ -66,9 +66,9 @@
     <property name="sun.cpu.isalist" value=""/>
   </properties>
   <testcase classname="StringVectorTest" name="whenYouNeedToKnowTheLengthOfTheCurrentStringItIsReturned" time="0"/>
-  <testcase classname="StringVectorTest" name="whenCoordinatesOfStringAreRequestedAllCoordinatesAreReturnedAsListForRightDiag" time="0"/>
+  <testcase classname="StringVectorTest" name="whenCoordinatesOfStringAreRequestedAllCoordinatesAreReturnedAsListForRightDiag" time="0.001"/>
   <testcase classname="StringVectorTest" name="whenSubstringRangeRequestedReturnAppropriateStringVector" time="0"/>
-  <testcase classname="StringVectorTest" name="whenVectorGivenAndEmptyStartStringWhenStringVectorAppendedUseNewVectorsStartPoint" time="0.001"/>
+  <testcase classname="StringVectorTest" name="whenVectorGivenAndEmptyStartStringWhenStringVectorAppendedUseNewVectorsStartPoint" time="0"/>
   <testcase classname="StringVectorTest" name="whenWhenSubstringRequestedReturnsStringVectorSubstringTest" time="0"/>
   <testcase classname="StringVectorTest" name="whenWhenSubstringRequestedReturnsStringVectorSubstringString" time="0"/>
   <testcase classname="StringVectorTest" name="whenCloneIsNeededCloneIsReturned" time="0"/>

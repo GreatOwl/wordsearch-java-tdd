@@ -61,7 +61,7 @@ public class StringVector {
             for (int pos = 0; pos <= (end.getY() - start.getY()); pos = pos + 1) {
                 coordinates.add(new Coordinate(end.getX(), start.getY() + pos));
             }
-        } else if (end.getX() == end.getY() || start.getX() + start.getY() == end.getX() + end.getY()) {
+        } else {// if (end.getX() == end.getY() || start.getX() + start.getY() == end.getX() + end.getY()) {
             // y = mx + b;
             //b = mx - y;
             int slope = (end.getX() - start.getX())/(end.getY() - start.getY());
@@ -78,7 +78,7 @@ public class StringVector {
         List<Coordinate> currentCoordinates = getCoordinates();
         int startPos = value.indexOf(search);
         int endPos = startPos + search.length() - 1;
-        if (startPos >= 0) {
+        if (startPos >= 0 && currentCoordinates.size() > 0) {
             StringVector subString = new StringVector(currentCoordinates.get(startPos));
             subString.append(search, currentCoordinates.get(endPos));
             return subString;

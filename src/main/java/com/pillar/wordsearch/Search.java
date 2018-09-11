@@ -59,6 +59,7 @@ public class Search {
         List<Word> solvedWords = new ArrayList<Word>();
         solvedWords = searchVectorList(solvedWords, puzzle.getRows());
         solvedWords = searchVectorList(solvedWords, puzzle.getColumns());
+        solvedWords = searchVectorList(solvedWords, puzzle.getLeftDiags());
         // List<StringVector> columns = puzzle.getColumns();
         return solvedWords;
     }
