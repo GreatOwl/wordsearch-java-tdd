@@ -11,10 +11,13 @@ import com.pillar.wordsearch.Word;
 
 public class Main {
     public static void main(String[] args) {
-
+        List<String> solved = solvePuzzle(getFileContents(args[0]));
+        for (String result : solved) {
+            System.out.println(result);
+        }
     }
 
-    public String getFileContents(String filename) {
+    public static String getFileContents(String filename) {
         String filePath = System.getProperty("user.dir") + "/puzzles/" + filename;
         String data;
         try {
@@ -25,11 +28,11 @@ public class Main {
         return data;
     }
 
-    public String[] splitIntoLines(String data) {
+    public static String[] splitIntoLines(String data) {
         return data.split("\\s+");
     }
 
-    public List<Word> splitIntoWords(String parsableWords) {
+    public static List<Word> splitIntoWords(String parsableWords) {
         String[] wordSplit = parsableWords.split("\\,");
         List<Word> words = new ArrayList<Word>();
         for (String wordString : wordSplit) {
@@ -39,7 +42,7 @@ public class Main {
         return words;
     }
 
-    public Puzzle buildPuzzle(String[] rawPuzzle) {
+    public static Puzzle buildPuzzle(String[] rawPuzzle) {
         String puzzleString = "";
         for (int line = 1; line < rawPuzzle.length; line = line + 1) {
             puzzleString = puzzleString + rawPuzzle[line];
@@ -47,7 +50,7 @@ public class Main {
         return new Puzzle(puzzleString);
     }
 
-    public List<String> solvePuzzle(String rawPuzzle) {
+    public static List<String> solvePuzzle(String rawPuzzle) {
         String[] lines = splitIntoLines(rawPuzzle);
         List<Word> words = splitIntoWords(lines[0]);
         Puzzle puzzle = buildPuzzle(lines);

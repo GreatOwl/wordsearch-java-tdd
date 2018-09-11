@@ -75,6 +75,6 @@
   <testcase classname="com.pillar.wordsearch.StringVectorTest" name="whenCoordinatesOfStringAreRequestedAllCoordinatesAreReturnedAsListForXAxis" time="0"/>
   <testcase classname="com.pillar.wordsearch.StringVectorTest" name="whenCoordinatesOfStringAreRequestedAllCoordinatesAreReturnedAsListForYAxis" time="0"/>
   <testcase classname="com.pillar.wordsearch.StringVectorTest" name="whenCoordinatesOfStringAreRequestedAllCoordinatesAreReturnedAsListForLeftDiag" time="0"/>
-  <testcase classname="com.pillar.wordsearch.StringVectorTest" name="whenStringAddedItCanBeRetrieved" time="0.001"/>
-  <testcase classname="com.pillar.wordsearch.StringVectorTest" name="whenStartCoordinateGivenItAddedToEnd" time="0"/>
+  <testcase classname="com.pillar.wordsearch.StringVectorTest" name="whenStringAddedItCanBeRetrieved" time="0"/>
+  <testcase classname="com.pillar.wordsearch.StringVectorTest" name="whenStartCoordinateGivenItAddedToEnd" time="0.001"/>
 </testsuite>
