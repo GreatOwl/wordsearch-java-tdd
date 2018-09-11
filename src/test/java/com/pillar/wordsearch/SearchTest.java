@@ -34,7 +34,7 @@ public class SearchTest {
             try {
                 assureCoordinatesMatch(word.getCoordinates(), actualWord.getCoordinates());
             } catch(NullPointerException e ) {
-                
+
             }
             pos = pos + 1;
         }
@@ -85,6 +85,24 @@ public class SearchTest {
         words.add(word);
 
         Puzzle testPuzzle = new Puzzle("a b c d e f g h i j k l m n o p");
+        Search actualSearch = new Search(testPuzzle, words);
+        assureWordsMatch(words, actualSearch.solvePuzzle());
+    }
+
+    @Test
+    public void whenPuzzleNeedsSolvingSearchCanFindAndReturnMatches() {
+        List<Word> words = new ArrayList<Word>();
+        Word word = new Word("aeim");
+        List<Coordinate> coordinates = new ArrayList<Coordinate>();
+        coordinates.add(new Coordinate(0,0));
+        coordinates.add(new Coordinate(1,1));
+        coordinates.add(new Coordinate(2,2));
+        coordinates.add(new Coordinate(3,3));
+        words.add(word);
+
+        Puzzle testPuzzle = new Puzzle("a b c d e f g h i j k l m n o p");
+        words = new ArrayList<Word>();
+        words.add(new Word("aeim"));
         Search actualSearch = new Search(testPuzzle, words);
         assureWordsMatch(words, actualSearch.solvePuzzle());
     }

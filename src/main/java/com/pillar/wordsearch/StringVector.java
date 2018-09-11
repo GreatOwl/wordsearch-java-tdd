@@ -78,9 +78,12 @@ public class StringVector {
         List<Coordinate> currentCoordinates = getCoordinates();
         int startPos = value.indexOf(search);
         int endPos = startPos + search.length() - 1;
-        StringVector subString = new StringVector(currentCoordinates.get(startPos));
-        subString.append(search, currentCoordinates.get(endPos));
-        return subString;
+        if (startPos >= 0) {
+            StringVector subString = new StringVector(currentCoordinates.get(startPos));
+            subString.append(search, currentCoordinates.get(endPos));
+            return subString;
+        }
+        return new StringVector();
     }
 
     public StringVector substring(int start, int end) {

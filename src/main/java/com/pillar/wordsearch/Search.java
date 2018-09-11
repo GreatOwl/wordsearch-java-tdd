@@ -31,16 +31,35 @@ public class Search {
         return words;
     }
 
+    private List<Word> searchList(List<Word> accumulator, StringVector searchable) {
+        wordLoop:
+        for (Word word : words) {
+            StringVector found = searchable.findSubstring(word.toString());
+            if (found.length() == 0) {
+                found = searchable.findSubstring(word.getReverseString());
+            }
+
+            if (found.length() > 0) {
+                word.attach(found.getCoordinates());
+                accumulator.add(word);
+                break wordLoop;
+            }
+        }
+        return accumulator;
+    }
+
+    private List<Word> searchVectorList(List<Word> accumulator, List<StringVector> vectors) {
+        for (StringVector vector : vectors) {
+            accumulator = searchList(accumulator, vector);
+        }
+        return accumulator;
+    }
+
     public List<Word> solvePuzzle() {
-        List<Word> words = new ArrayList<Word>();
-        Word word = new Word("abcd");
-        List<Coordinate> coordinates = new ArrayList<Coordinate>();
-        coordinates.add(new Coordinate(0,0));
-        coordinates.add(new Coordinate(1,0));
-        coordinates.add(new Coordinate(2,0));
-        coordinates.add(new Coordinate(3,0));
-        word.attach(coordinates);
-        words.add(word);
-        return words;
+        List<Word> solvedWords = new ArrayList<Word>();
+        solvedWords = searchVectorList(solvedWords, puzzle.getRows());
+        solvedWords = searchVectorList(solvedWords, puzzle.getColumns());
+        // List<StringVector> columns = puzzle.getColumns();
+        return solvedWords;
     }
 }
