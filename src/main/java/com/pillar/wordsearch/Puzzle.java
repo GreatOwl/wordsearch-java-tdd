@@ -103,7 +103,6 @@ public class Puzzle {
     }
 
     private void loadLeftDiag(int row, int column, int rowCount, StringVector character) {
-        // int diag = rowCount - row + column + 1;
         int diag = row - column + 1;
         if (isSingleCharDiag(diag)) {
             return;
@@ -135,7 +134,7 @@ public class Puzzle {
         return rightDiagContents;
     }
 
-    public StringVector getLeftDiag(int diag) { // m
+    public StringVector getLeftDiag(int diag) {
         if (isSingleCharDiag(diag)) {
             return new StringVector();
         }
@@ -147,7 +146,7 @@ public class Puzzle {
         return (diag + 1) >= (2 * getRowCount() - 2);
     }
 
-    public StringVector getRightDiag(int diag) { //m
+    public StringVector getRightDiag(int diag) {
         if (isSingleCharDiag(diag)) {
             return new StringVector();
         }

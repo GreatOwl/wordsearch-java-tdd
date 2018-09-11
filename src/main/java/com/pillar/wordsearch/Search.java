@@ -60,7 +60,6 @@ public class Search {
         solvedWords = searchVectorList(solvedWords, puzzle.getColumns());
         solvedWords = searchVectorList(solvedWords, puzzle.getLeftDiags());
         solvedWords = searchVectorList(solvedWords, puzzle.getRightDiags());
-        // List<StringVector> columns = puzzle.getColumns();
         return solvedWords;
     }
 }
