@@ -38,5 +38,13 @@ public class Main {
         }
         return words;
     }
+
+    public Puzzle buildPuzzle(String[] rawPuzzle) {
+        String puzzleString = "";
+        for (int line = 1; line < rawPuzzle.length; line = line + 1) {
+            puzzleString = puzzleString + rawPuzzle[line];
+        }
+        return new Puzzle(puzzleString);
+    }
 }
     

@@ -67,11 +67,11 @@
   </properties>
   <testcase classname="com.pillar.wordsearch.PuzzleTest" name="whenSecondColumnIsNeededReturnsSecondColumn" time="0"/>
   <testcase classname="com.pillar.wordsearch.PuzzleTest" name="whenPuzzleProvidedPuzzleGetsCompressedForSolvingForAnyPuzzle" time="0"/>
-  <testcase classname="com.pillar.wordsearch.PuzzleTest" name="whenFirstColumnIsNeededReturnsFirstColumn" time="0"/>
-  <testcase classname="com.pillar.wordsearch.PuzzleTest" name="whenAllRightDiagsNeededGetAllRightDiags" time="0.001"/>
+  <testcase classname="com.pillar.wordsearch.PuzzleTest" name="whenFirstColumnIsNeededReturnsFirstColumn" time="0.002"/>
+  <testcase classname="com.pillar.wordsearch.PuzzleTest" name="whenAllRightDiagsNeededGetAllRightDiags" time="0"/>
   <testcase classname="com.pillar.wordsearch.PuzzleTest" name="whenDiagGreaterThanGridRequestedReturnEmptyString" time="0.001"/>
-  <testcase classname="com.pillar.wordsearch.PuzzleTest" name="whenNumberOfRowsAreRequestedReturnsTheRowsForTheGivenPuzzle" time="0"/>
-  <testcase classname="com.pillar.wordsearch.PuzzleTest" name="whenFirstRightDiagIsNeededReturnFirstRightDiag" time="0"/>
+  <testcase classname="com.pillar.wordsearch.PuzzleTest" name="whenNumberOfRowsAreRequestedReturnsTheRowsForTheGivenPuzzle" time="0.001"/>
+  <testcase classname="com.pillar.wordsearch.PuzzleTest" name="whenFirstRightDiagIsNeededReturnFirstRightDiag" time="0.001"/>
   <testcase classname="com.pillar.wordsearch.PuzzleTest" name="whenSecondRightDiagIsNeededReturnSecondRightDiag" time="0.001"/>
   <testcase classname="com.pillar.wordsearch.PuzzleTest" name="whenPuzzleGivenInConstructionGetPuzzleReturnsSamePuzzle" time="0.001"/>
   <testcase classname="com.pillar.wordsearch.PuzzleTest" name="whenAllRowsNeededGetAllRows" time="0.001"/>
@@ -79,9 +79,9 @@
   <testcase classname="com.pillar.wordsearch.PuzzleTest" name="whenThirdRowIsNeededReturnsThirdRow" time="0.001"/>
   <testcase classname="com.pillar.wordsearch.PuzzleTest" name="whenSecondRowIsNeededReturnsSecondRow" time="0.001"/>
   <testcase classname="com.pillar.wordsearch.PuzzleTest" name="whenNumberOfRowsAreRequestedReturns3" time="0.001"/>
-  <testcase classname="com.pillar.wordsearch.PuzzleTest" name="whenSecondLeftDiagIsNeededReturnSecondtLeftDiag" time="0.001"/>
+  <testcase classname="com.pillar.wordsearch.PuzzleTest" name="whenSecondLeftDiagIsNeededReturnSecondtLeftDiag" time="0"/>
   <testcase classname="com.pillar.wordsearch.PuzzleTest" name="whenAllLeftDiagsNeededGetAllLeftDiags" time="0.001"/>
-  <testcase classname="com.pillar.wordsearch.PuzzleTest" name="whenPuzzleProvidedPuzzleGetsCompressedForSolving" time="0.001"/>
-  <testcase classname="com.pillar.wordsearch.PuzzleTest" name="whenFirstRowIsNeededReturnsFirstRow" time="0.001"/>
+  <testcase classname="com.pillar.wordsearch.PuzzleTest" name="whenPuzzleProvidedPuzzleGetsCompressedForSolving" time="0"/>
+  <testcase classname="com.pillar.wordsearch.PuzzleTest" name="whenFirstRowIsNeededReturnsFirstRow" time="0"/>
   <testcase classname="com.pillar.wordsearch.PuzzleTest" name="whenFirstLeftDiagIsNeededReturnFirstLeftDiag" time="0.001"/>
 </testsuite>
