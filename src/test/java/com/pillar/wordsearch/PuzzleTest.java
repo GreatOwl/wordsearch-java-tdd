@@ -8,7 +8,7 @@ import static junit.framework.TestCase.assertEquals;
 import com.pillar.wordsearch.StringVector;
 import com.pillar.wordsearch.Coordinate;
 
-public class PuzzleTest {    
+public class PuzzleTest {
     
     String puzzleString;
     Puzzle puzzle;

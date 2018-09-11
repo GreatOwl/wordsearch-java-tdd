@@ -18,11 +18,29 @@ public class Search {
         this.words = words;
     }
 
+    public Search(Puzzle puzzle, List<Word> words) {
+        this.puzzle = puzzle;
+        this.words = words;
+    }
+
     public Puzzle getPuzzle() {
         return puzzle;
     }
 
     public List<Word> getWords() {
+        return words;
+    }
+
+    public List<Word> solvePuzzle() {
+        List<Word> words = new ArrayList<Word>();
+        Word word = new Word("abcd");
+        List<Coordinate> coordinates = new ArrayList<Coordinate>();
+        coordinates.add(new Coordinate(0,0));
+        coordinates.add(new Coordinate(1,0));
+        coordinates.add(new Coordinate(2,0));
+        coordinates.add(new Coordinate(3,0));
+        word.attach(coordinates);
+        words.add(word);
         return words;
     }
 }

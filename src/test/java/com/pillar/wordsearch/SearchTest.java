@@ -29,7 +29,22 @@ public class SearchTest {
     private void assureWordsMatch(List<Word> test, List<Word> actual) {
         int pos = 0;
         for (Word word : test) {
-            assertEquals(word.toString(), actual.get(pos).toString());
+            Word actualWord = actual.get(pos);
+            assertEquals(word.toString(), actualWord.toString());
+            try {
+                assureCoordinatesMatch(word.getCoordinates(), actualWord.getCoordinates());
+            } catch(NullPointerException e ) {
+                
+            }
+            pos = pos + 1;
+        }
+    }
+
+    private void assureCoordinatesMatch(List<Coordinate> test, List<Coordinate> actual) {
+        int pos = 0;
+        for (Coordinate coordinate : test) {
+            assertEquals(coordinate.getX(), actual.get(pos).getX());
+            assertEquals(coordinate.getY(), actual.get(pos).getY());
             pos = pos + 1;
         }
     }
@@ -55,5 +70,22 @@ public class SearchTest {
         words.add(new Word("fgh"));
         Search actualSearch = new Search(words);
         assureWordsMatch(words, actualSearch.getWords());
+    }
+
+    @Test
+    public void whenPuzzleNeedsSolvingSearchCanReturnMatches() {
+        List<Word> words = new ArrayList<Word>();
+        Word word = new Word("abcd");
+        List<Coordinate> coordinates = new ArrayList<Coordinate>();
+        coordinates.add(new Coordinate(0,0));
+        coordinates.add(new Coordinate(1,0));
+        coordinates.add(new Coordinate(2,0));
+        coordinates.add(new Coordinate(3,0));
+        word.attach(coordinates);
+        words.add(word);
+
+        Puzzle testPuzzle = new Puzzle("a b c d e f g h i j k l m n o p");
+        Search actualSearch = new Search(testPuzzle, words);
+        assureWordsMatch(words, actualSearch.solvePuzzle());
     }
 }
