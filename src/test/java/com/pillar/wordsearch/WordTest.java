@@ -24,6 +24,13 @@ public class WordTest {
         assertEquals(wordString, word.toString());
     }
 
+    public void whenWordNeedsToBeReversedItIs() {
+        String wordString = "balloon";
+        String reversed = "noollab";
+        Word word = new Word(wordString);
+        assertEquals(reversed, word.getReverseString());
+    }
+
     public void whenWordIsFoundCoordinatesCanBeAttachedAndRetreived() {
         String wordString = "balloon";
         Word word = new Word(wordString);

@@ -17,6 +17,11 @@ public class Word {
         return wordString;
     }
 
+    public String getReverseString() {
+        StringBuilder builder = new StringBuilder();
+        return builder.append(wordString).reverse().toString();
+    }
+
     public void attach(List<Coordinate> coordinates) {
         this.coordinates = coordinates;
     }
