@@ -44,4 +44,16 @@ public class SearchTest {
         Search actualSearch = new Search(words);
         assureWordsMatch(words, actualSearch.getWords());
     }
+
+    @Test
+    public void whenGivenWordsAreRequestedTheWordsAreReturned() {
+        List<Word> words = new ArrayList<Word>();
+        words.add(new Word("abcd"));
+        words.add(new Word("aeil"));
+        words.add(new Word("afkp"));
+        words.add(new Word("mjhd"));
+        words.add(new Word("fgh"));
+        Search actualSearch = new Search(words);
+        assureWordsMatch(words, actualSearch.getWords());
+    }
 }

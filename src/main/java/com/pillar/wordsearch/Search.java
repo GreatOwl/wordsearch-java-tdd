@@ -9,12 +9,13 @@ import com.pillar.wordsearch.Word;
 public class Search {
 
     private Puzzle puzzle;
+    private List<Word> words;
     public Search(Puzzle puzzle) {
         this.puzzle = puzzle;
     }
 
     public Search(List<Word> words) {
-        
+        this.words = words;
     }
 
     public Puzzle getPuzzle() {
@@ -22,11 +23,6 @@ public class Search {
     }
 
     public List<Word> getWords() {
-        List<Word> words = new ArrayList<Word>();
-        words.add(new Word("abcd"));
-        words.add(new Word("aeil"));
-        words.add(new Word("afkp"));
-        words.add(new Word("mjhd"));
         return words;
     }
 }
