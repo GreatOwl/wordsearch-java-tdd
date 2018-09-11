@@ -142,4 +142,25 @@ public class SearchTest {
         assertEquals(1, solved.size());
         assureWordsMatch(words, actualSearch.solvePuzzle());
     }
+
+    @Test
+    public void whenPuzzleNeedsSolvingSearchCanFindAndReturnBackwardsMatches() {
+        List<Word> words = new ArrayList<Word>();
+        Word word = new Word("nkh");
+        List<Coordinate> coordinates = new ArrayList<Coordinate>();
+        coordinates.add(new Coordinate(1,3));
+        coordinates.add(new Coordinate(2,2));
+        coordinates.add(new Coordinate(3,1));
+        words.add(word);
+
+        Puzzle testPuzzle = new Puzzle("a b c d  e f g h  i j k l  m n o p");
+        words = new ArrayList<Word>();
+        Word testWord = new Word("nkh");
+        words.add(testWord);
+
+        Search actualSearch = new Search(testPuzzle, words);
+        List<Word> solved = actualSearch.solvePuzzle();
+        assertEquals(1, solved.size());
+        assertEquals("nkh: (1,3),(2,2),(3,1)", solved.get(0).format());
+    }
 }

@@ -1,6 +1,7 @@
 package com.pillar.wordsearch;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import com.pillar.wordsearch.StringVector;
 import com.pillar.wordsearch.Word;
@@ -36,9 +37,15 @@ public class Search {
             StringVector found = searchable.findSubstring(word.toString());
             if (found.length() == 0) {
                 found = searchable.findSubstring(word.getReverseString());
-            }
-
-            if (found.length() > 0) {
+                if (found.length() > 0) {
+                    List<Coordinate> coordinates;
+                    coordinates = found.getCoordinates();
+                    Collections.reverse(coordinates);
+                    word.attach(coordinates);
+                    accumulator.add(word);
+                    break wordLoop;
+                }
+            } else {
                 word.attach(found.getCoordinates());
                 accumulator.add(word);
                 break wordLoop;
