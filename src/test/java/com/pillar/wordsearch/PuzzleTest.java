@@ -103,8 +103,17 @@ public class PuzzleTest {
         List<StringVector> testList = new ArrayList<StringVector>();
         testList.add(new StringVector("bd", new Coordinate(0,1), new Coordinate(1, 2)));
         testList.add(new StringVector("ace", new Coordinate(0,0), new Coordinate(2, 2)));
-        testList.add(new StringVector("bd", new Coordinate(1,0), new Coordinate(1, 2)));
+        testList.add(new StringVector("bd", new Coordinate(1,0), new Coordinate(2, 1)));
         assureStringVectorList(testList, puzzle.getLeftDiags());
+    }
+
+    @Test
+    public void whenAllRightDiagsNeededGetAllRightDiags() {
+        List<StringVector> testList = new ArrayList<StringVector>();
+        testList.add(new StringVector("bb", new Coordinate(1,0), new Coordinate(0, 1)));
+        testList.add(new StringVector("ccc", new Coordinate(2,0), new Coordinate(0, 2)));
+        testList.add(new StringVector("dd", new Coordinate(2,1), new Coordinate(1, 2)));
+        assureStringVectorList(testList, puzzle.getRightDiags());
     }
 
     @Test

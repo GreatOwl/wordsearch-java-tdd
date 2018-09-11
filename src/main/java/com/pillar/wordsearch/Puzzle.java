@@ -131,6 +131,10 @@ public class Puzzle {
         return leftDiagContents;
     }
 
+    public List<StringVector> getRightDiags() {
+        return rightDiagContents;
+    }
+
     public StringVector getLeftDiag(int diag) { // m
         if (isSingleCharDiag(diag)) {
             return new StringVector();
@@ -148,6 +152,6 @@ public class Puzzle {
             return new StringVector();
         }
 
-        return rightDiagContents.get(diag);
+        return getRightDiags().get(diag);
     }
 }
