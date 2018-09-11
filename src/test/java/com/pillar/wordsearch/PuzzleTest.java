@@ -1,6 +1,7 @@
+package com.pillar.wordsearch;
+
 import com.pillar.wordsearch.Puzzle;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import org.junit.Test;
 import org.junit.Before;

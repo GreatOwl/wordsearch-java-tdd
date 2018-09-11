@@ -3,7 +3,6 @@ package com.pillar.wordsearch;
 import java.util.ArrayList;
 import java.util.List;
 import com.pillar.wordsearch.StringVector;
-import com.pillar.wordsearch.Coordinate;
 import com.pillar.wordsearch.Word;
 
 public class Search {

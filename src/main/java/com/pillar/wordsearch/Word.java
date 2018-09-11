@@ -1,6 +1,5 @@
 package com.pillar.wordsearch;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import com.pillar.wordsearch.Coordinate;

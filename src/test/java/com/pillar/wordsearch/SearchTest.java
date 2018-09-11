@@ -1,11 +1,10 @@
+package com.pillar.wordsearch;
+
 import com.pillar.wordsearch.Search;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import org.junit.Test;
-import org.junit.Before;
 import static junit.framework.TestCase.assertEquals;
-import com.pillar.wordsearch.StringVector;
 import com.pillar.wordsearch.Coordinate;
 import com.pillar.wordsearch.Puzzle;
 import com.pillar.wordsearch.Word;
