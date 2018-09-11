@@ -99,6 +99,15 @@ public class PuzzleTest {
     }
 
     @Test
+    public void whenAllLeftDiagsNeededGetAllLeftDiags() {
+        List<StringVector> testList = new ArrayList<StringVector>();
+        testList.add(new StringVector("bd", new Coordinate(0,1), new Coordinate(1, 2)));
+        testList.add(new StringVector("ace", new Coordinate(0,0), new Coordinate(2, 2)));
+        testList.add(new StringVector("bd", new Coordinate(1,0), new Coordinate(1, 2)));
+        assureStringVectorList(testList, puzzle.getLeftDiags());
+    }
+
+    @Test
     public void whenFirstLeftDiagIsNeededReturnFirstLeftDiag() {
         assertEquals("bd", puzzle.getLeftDiag(0).toString());
     }

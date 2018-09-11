@@ -127,12 +127,16 @@ public class Puzzle {
         return columnContents;
     }
 
+    public List<StringVector> getLeftDiags() {
+        return leftDiagContents;
+    }
+
     public StringVector getLeftDiag(int diag) { // m
         if (isSingleCharDiag(diag)) {
             return new StringVector();
         }
 
-        return leftDiagContents.get(diag);
+        return getLeftDiags().get(diag);
     }
 
     private boolean isSingleCharDiag(int diag) {
