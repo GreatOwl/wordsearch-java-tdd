@@ -126,17 +126,21 @@ public class SearchTest {
     @Test
     public void whenPuzzleNeedsSolvingSearchCanFindAndReturnRightDiagonalMatches() {
         List<Word> words = new ArrayList<Word>();
-        Word word = new Word("bgl");
+        Word word = new Word("hkn");
         List<Coordinate> coordinates = new ArrayList<Coordinate>();
-        coordinates.add(new Coordinate(1,0));
-        coordinates.add(new Coordinate(2,1));
-        coordinates.add(new Coordinate(3,2));
+        coordinates.add(new Coordinate(3,1));
+        coordinates.add(new Coordinate(2,2));
+        coordinates.add(new Coordinate(1,3));
         words.add(word);
 
         Puzzle testPuzzle = new Puzzle("a b c d  e f g h  i j k l  m n o p");
         words = new ArrayList<Word>();
-        words.add(new Word("bgl"));
+        Word testWord = new Word("hkn");
+        words.add(testWord);
+
         Search actualSearch = new Search(testPuzzle, words);
+        List<Word> solved = actualSearch.solvePuzzle();
+        assertEquals(1, solved.size());
         assureWordsMatch(words, actualSearch.solvePuzzle());
     }
 }

@@ -65,12 +65,12 @@
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="SearchTest" name="whenGivenWordsAreRequestedTheWordsAreReturned" time="0.004"/>
-  <testcase classname="SearchTest" name="whenPuzzleRequestedOriginalyGivenPuzzleIsReturned" time="0.003"/>
+  <testcase classname="SearchTest" name="whenGivenWordsAreRequestedTheWordsAreReturned" time="0.005"/>
+  <testcase classname="SearchTest" name="whenPuzzleRequestedOriginalyGivenPuzzleIsReturned" time="0.002"/>
   <testcase classname="SearchTest" name="whenPuzzleNeedsSolvingSearchCanReturnMatches" time="0.002"/>
-  <testcase classname="SearchTest" name="whenPuzzleNeedsSolvingSearchCanFindAndReturnRightDiagonalMatches" time="0.002"/>
+  <testcase classname="SearchTest" name="whenPuzzleNeedsSolvingSearchCanFindAndReturnRightDiagonalMatches" time="0.001"/>
   <testcase classname="SearchTest" name="whenPuzzleNeedsSolvingSearchCanFindAndReturnLeftDiagonalMatches" time="0.001"/>
-  <testcase classname="SearchTest" name="whenPuzzleNeedsSolvingSearchCanFindAndReturnMatches" time="0.001"/>
+  <testcase classname="SearchTest" name="whenPuzzleNeedsSolvingSearchCanFindAndReturnMatches" time="0.002"/>
   <testcase classname="SearchTest" name="whenPuzzleRequestedPuzzleIsReturned" time="0.001"/>
   <testcase classname="SearchTest" name="whenWordsRequestedFromSearchWordsAreReturned" time="0"/>
 </testsuite>

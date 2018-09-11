@@ -61,17 +61,33 @@ public class StringVector {
             for (int pos = 0; pos <= (end.getY() - start.getY()); pos = pos + 1) {
                 coordinates.add(new Coordinate(end.getX(), start.getY() + pos));
             }
-        } else {// if (end.getX() == end.getY() || start.getX() + start.getY() == end.getX() + end.getY()) {
+        } else {
             // y = mx + b;
             //b = mx - y;
             int slope = (end.getX() - start.getX())/(end.getY() - start.getY());
             int offset = slope * start.getX() - start.getY();
-            for (int pos = start.getX(); pos <= end.getX(); pos = pos + 1) {
+            for (int pos = start.getX(); compare(pos); pos = increment(pos)) {
                 int y = slope * pos - offset;
                 coordinates.add(new Coordinate(pos, y));
             }
         }
         return coordinates;
+    }
+
+    private boolean compare(int position) {
+        if (start.getX() > end.getX()) {
+            return position >= end.getX();
+        } else {
+            return position <= end.getX();
+        }
+    }
+
+    private int increment(int position) {
+        if (start.getX() > end.getX()) {
+            return position - 1;
+        } else {
+            return position + 1;
+        }
     }
 
     public StringVector findSubstring(String search) {
