@@ -26,4 +26,9 @@ public class CoordinateTest {
     public void whenCoordinatesConstructedYCanBeRetreived() {
         assertEquals(y, coord.getY());
     }
+
+    @Test
+    public void whenCoordinatesAreReportedTheyAreHumanReadable() {
+        assertEquals("(12,22)", coord.toString());
+    }
 }
