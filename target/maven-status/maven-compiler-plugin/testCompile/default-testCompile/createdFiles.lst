@@ -1,4 +1,5 @@
 StringVectorTest.class
 CoordinateTest.class
 PuzzleTest.class
+SearchTest.class
 WordTest.class
