@@ -46,4 +46,20 @@ public class WordTest {
         assertEquals(wordCoordinates, word.getCoordinates());
     }
 
+    public void whenWordIsFoundFormatTheResult() {
+        String wordString = "balloon";
+        Word word = new Word(wordString);
+        List<Coordinate> wordCoordinates = new ArrayList<Coordinate>();
+        wordCoordinates.add(new Coordinate(1,2));
+        wordCoordinates.add(new Coordinate(1,3));
+        wordCoordinates.add(new Coordinate(1,4));
+        wordCoordinates.add(new Coordinate(1,5));
+        wordCoordinates.add(new Coordinate(1,6));
+        wordCoordinates.add(new Coordinate(1,7));
+        wordCoordinates.add(new Coordinate(1,8));
+        
+        word.attach(wordCoordinates);
+        assertEquals("balloon: (1,2),(1,3),(1,4),(1,5),(1,6),(1,7),(1,8)", word.format());
+    }
+
 }

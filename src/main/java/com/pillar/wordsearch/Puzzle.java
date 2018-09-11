@@ -41,7 +41,7 @@ public class Puzzle {
 
     public String compressPuzzle() {
         if (compressedPuzzle == null) {
-            compressedPuzzle = puzzle.replaceAll("\\s+", "");
+            compressedPuzzle = puzzle.replaceAll("\\,", "").replaceAll("\\s+", "");
         }
         return compressedPuzzle;
     }

@@ -46,7 +46,7 @@
     <property name="java.class.path" value="/usr/local/Cellar/maven/3.5.4/libexec/boot/plexus-classworlds-2.5.2.jar"/>
     <property name="java.vm.specification.version" value="10"/>
     <property name="sun.arch.data.model" value="64"/>
-    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher test"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher clean test"/>
     <property name="java.home" value="/Library/Java/JavaVirtualMachines/jdk-10.0.2.jdk/Contents/Home"/>
     <property name="user.language" value="en"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
@@ -66,10 +66,10 @@
     <property name="sun.cpu.isalist" value=""/>
   </properties>
   <testcase classname="com.pillar.wordsearch.StringVectorTest" name="whenYouNeedToKnowTheLengthOfTheCurrentStringItIsReturned" time="0"/>
-  <testcase classname="com.pillar.wordsearch.StringVectorTest" name="whenCoordinatesOfStringAreRequestedAllCoordinatesAreReturnedAsListForRightDiag" time="0.001"/>
+  <testcase classname="com.pillar.wordsearch.StringVectorTest" name="whenCoordinatesOfStringAreRequestedAllCoordinatesAreReturnedAsListForRightDiag" time="0"/>
   <testcase classname="com.pillar.wordsearch.StringVectorTest" name="whenSubstringRangeRequestedReturnAppropriateStringVector" time="0"/>
   <testcase classname="com.pillar.wordsearch.StringVectorTest" name="whenVectorGivenAndEmptyStartStringWhenStringVectorAppendedUseNewVectorsStartPoint" time="0"/>
-  <testcase classname="com.pillar.wordsearch.StringVectorTest" name="whenWhenSubstringRequestedReturnsStringVectorSubstringTest" time="0"/>
+  <testcase classname="com.pillar.wordsearch.StringVectorTest" name="whenWhenSubstringRequestedReturnsStringVectorSubstringTest" time="0.001"/>
   <testcase classname="com.pillar.wordsearch.StringVectorTest" name="whenWhenSubstringRequestedReturnsStringVectorSubstringString" time="0"/>
   <testcase classname="com.pillar.wordsearch.StringVectorTest" name="whenCloneIsNeededCloneIsReturned" time="0"/>
   <testcase classname="com.pillar.wordsearch.StringVectorTest" name="whenCoordinatesOfStringAreRequestedAllCoordinatesAreReturnedAsListForXAxis" time="0"/>

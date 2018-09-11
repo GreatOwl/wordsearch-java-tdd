@@ -16,6 +16,16 @@ public class Word {
         return wordString;
     }
 
+    public String format() {
+        String formatted = wordString + ":";
+        String glue = " ";
+        for (Coordinate coordinate : getCoordinates()) {
+            formatted = formatted + glue + coordinate.toString();
+            glue = ",";
+        }
+        return formatted;
+    }
+
     public String getReverseString() {
         StringBuilder builder = new StringBuilder();
         return builder.append(wordString).reverse().toString();

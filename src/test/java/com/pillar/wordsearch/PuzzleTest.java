@@ -16,7 +16,7 @@ public class PuzzleTest {
 
     @Before
     public void setUp() {
-        puzzleString = "a b c b c d c d e";
+        puzzleString = "a,b,c b,c,d c,d,e";
         puzzle = new Puzzle(puzzleString);
     }
 
