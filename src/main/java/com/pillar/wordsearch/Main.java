@@ -46,5 +46,18 @@ public class Main {
         }
         return new Puzzle(puzzleString);
     }
+
+    public List<String> solvePuzzle(String rawPuzzle) {
+        String[] lines = splitIntoLines(rawPuzzle);
+        List<Word> words = splitIntoWords(lines[0]);
+        Puzzle puzzle = buildPuzzle(lines);
+        Search search = new Search(puzzle, words);
+        List<Word> solved = search.solvePuzzle();
+        List<String> solvedFormatted = new ArrayList<String>();
+        for (Word currenWord : solved) {
+            solvedFormatted.add(currenWord.format());
+        }
+        return solvedFormatted;
+    }
 }
     
